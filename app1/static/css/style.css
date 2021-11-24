@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400;1,700&family=Arimo:ital,wght@0,400;1,400;1,500;1,700&family=Raleway:wght@100;300;400;800&family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap');
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+
+#navhd {
+    height: 130px;
+}
+
+#ab {
+    color: black;
+}
+.navbar-collapse {
+    z-index: 2;
+}
+#img1{
+    height: 100%;
+    width: 100%;
+}
+
+ .carousel-item {
+        min-height: 30px;
+        background: no-repeat scroll center scroll;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+
+    }
+    .carousel-caption{
+        position: absolute;
+    }
+    .carousel-item::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(22, 22, 22, 0.329);
+        opacity: 0.3;
+    }
+.display-1{
+    font-size: 117px;
+    color: #324d7e;
+    font-family: fantasy;
+
+}
+
+.display-4{
+    font-family: none;
+    color: #d17932;
+}
+#h2span{
+    font-size: 52px;
+    font-family: fantasy;
+    color: #2f7563;
+}
+#h2f{
+    color: #e8e8e8;
+
+}
+.display-2{
+    font-family: fantasy;
+    color: #055160;
+    font-size: 80px;
+}
+
+#spa{
+    color: #e8e8e8;
+}
+    #p1{
+        color: rgb(73, 30, 30);
+    }
+
+    #headh1{
+        padding-top: 47px;
+        align-items: center;
+    }
+
+   
+.services .content .box{
+    margin: 3rem 0;
+
+
+}
+.services .content .box #abh3{
+    font-size: 35px;
+    
+    
+}
+.services .content .box #abh3 i{
+    padding: 0 1rem;
+    color: black;
+}
+.services .content .box p{
+    padding-left: 6rem;
+    font-size: 11px;
+    color: #666;
+
+}
+
+#ps{
+    font-size: 17px;
+}
+
+.h22{
+    font-family: sans-serif;
+    color: #3f3f3f;
+    font-weight: 400;
+    line-height: 1rem;
+    font-size: 50px;
+}
+#span2{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: cursive;
+    font-size: 50px;
+
+}
+#pab{
+    margin-top: 40px;
+    line-height: 30px;
+    font-size: 16px;
+}
+#social{
+    font-size:70px;
+    padding-right: 10px;
+    margin-right: 90px;
+  
+}
+
+#social a {
+       text-decoration: none;
+       color: #010;
+       box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+       margin: 0 20px;
+       border-radius: 80%;
+       position: relative;
+}
+    h5{
+        font-size: 15px;
+        text-align: center;
+    }
+.doctor{
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(32, 13, 13);
+}
+.doctor .hd{
+    color: #fff;
+
+}
+
+.doctor .hd::before,.doctor .hd::after{
+   border-color: #fff;
+}
+
+.doctor #doc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;   
+}
+.doctor #doc .card{
+    height: 36rem;
+    width: 25rem;
+    background: #fff;
+    text-align: center;
+    margin: 7rem 2rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-reflect: below .2rem linear-gradient(transparent 70%,#0004);
+
+}
+.heado{
+    margin-top: 80px;
+}
+
+.doctor #doc .card #img3{
+    margin: 1rem 0;
+    padding-top: 2rem;
+    width: 100%;
+}
+.doctor #doc .card #img3  img{
+    height: 13rem;
+    width: 13rem;
+    border-radius: 30%;
+    border: .5rem solid #fff;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0,.3);
+    object-fit: cover;
+
+}
+.doctor #doc .card .info #h3{
+    font-size: 2rem;
+    color: #333;
+    color: sandybrown;
+
+}
+
+.doctor #doc .card .info #span4{
+    font-size: 1.2rem;
+   
+   
+}
+
+.doctor #doc .card .info #span4 .icons a{
+    margin-top: 4rem;
+    padding: 0 9rem;
+    font-size: 30px;
+    color: rgb(10, 9, 9);
+}
+
+.doctor #doc .card .info #span4 .icons a:hover{
+    color: whitesmoke;
+}
+.contact-info{
+    margin: 2rem 0;
+
+}
+
+
+.contact-info span{
+    display: block;
+}
+
+.contact-info div{
+    margin: 0.8rem 0;
+    padding: 1rem;
+}
+.contact-info span .fas{
+    font-size: 2rem;
+    padding-bottom: 0 9rem;
+
+}
+.contact-info div span:nth-child(2){
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.contact-info .text{
+    padding-top: 0.4rem;
+}
+.contact-form{
+    padding:2rem 0;
+    border-top: 1px solid #c7c7c7;
+}
+.contact-form form {
+    padding-bottom: 1rem;
+}
+.form-control{
+    width: 100%;
+    border: 1.5px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin: 0.6rem 0;
+    font-family: serif;
+    font-size: 1rem;
+    outline: 0;
+}
+.form-control:focus{
+    box-shadow: 0 0 6px -3px rgba(48,48,48,1);
+}
+.contact-form div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 0.6rem;
+}
+.btm {
+    font-family: sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    
+}
+.btm:hover{
+    opacity: 0.8;
+
+}
+
+.contact-form > div{
+    margin: 0 auto;
+    text-align: center;
+}
+#p22{
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:992px){
+    .h22 #span2{
+        font-size: 38px;
+    }
+    #social a .fab {
+        font-size: 0px;
+    }
+    #home{
+        height: 0%;
+    }
+    .doctor #doc .card{
+        height: 20rem;
+        width: 15rem;
+    }
+
+    .contact-info{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    #social{
+        font-size:40px; 
+        margin: 0 17px;
+        position: relative;
+    }
+    #p22{
+        font-size: 13px;
+    }
+  
+    
+
+    
+}
+@media(max-width:590px){
+    #p22{
+        font-size: 11px;
+    }
+  
+}
+
+
