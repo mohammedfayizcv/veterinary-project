@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1',
-    'docapp',
-    'userapp',
+    'app2',
+   
+  
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'veterinaryproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'app1/templates'],
+        'DIRS': [BASE_DIR/'app1/templates',BASE_DIR/'app2/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
