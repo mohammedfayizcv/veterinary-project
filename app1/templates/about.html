@@ -1,0 +1,127 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+
+
+<style>
+    p {
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        line-height: 24px;
+        text-align: inherit;
+        text-transform: none;
+        color: #6c6c6c;
+    }
+
+    #p1 {
+        font-size: 18px;
+        color: #222;
+    }
+
+    .line1 {
+        color: #000;
+        font-size: 12px
+    }
+    
+    .line2 {
+        color: #000;
+        font-size: 12px
+    }
+    
+    .line3 {
+        color: #000;
+        font-size: 12px
+    }
+    
+    .cards {
+        transition: all 0.2s ease;
+        cursor: pointer
+    }
+    
+    .cards:hover {
+        box-shadow: 4px 5px 5px 1px #e9ecef;
+        transform: scale(1.1)
+    }
+</style>
+
+
+<section class="about us" id="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <h2 class="fs-1 mt-lg-5 fw-bold " style="color: #35488c;"> Love Your pet'OS</h2>
+                <p class="" id="p1">In keeping with LovePet efforts of being india’s most transparent Pet Facility, we
+                    can now share. tour of our Facility!</p>
+                <p></p>
+                <p>So please go ahead, have a look around our place from your lounge room, kitchen or even while your
+                    down the road having a cup</p>
+                    <p>  The LovePet is a family owned business. The Cleghorn and Hill families have been involved in the pet care industry for a combination of 33 years, they are renowned for the expert care, and service that they provide to their clients. This expertise has been combined with years of research and planning to deliver Melbourne. pet owners with a facility that offers maximum comfort and maximum safety – in all seasons. The facility has been custom designed to ensure the very best for pets and peace of mind for pet owners. At The Pets Hotel V.I.P stands for Very Important Pets and Very Important People.</p>
+                <p> <img src="{% static 'images/petos sign.png' %}" alt="" > / founder PETOS </p>    
+
+            </div>
+            <div class="col-md-6">
+                <div class="image">
+                    <img src="{% static 'images/home3.jpg' %}" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="image">
+            <img src="{% static 'images/backg.jpg' %}" alt="" width="100%">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="container mt-4 d-flex justify-content-center">
+            <div class="row g-0 mt-3" >
+                <div class="col-md-3 border-right">
+                    <div class="cards">
+                        <div class="first bg-white p-4 text-center"> <img src="{% static 'images/07.jpg' %}" width="100%" />
+                            <p><h5>Help Scout plus</h5></p> 
+                            <p class="line1">No limitation - Its got everything that you 'll need as you grow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 border-right">
+                    <div class="cards">
+                        <div class=" second bg-white p-4 text-center"> <img src="{% static 'images/dog1.jpg' %}" width="100%" />
+                            <p><h5>Our support</h5></p> 
+                            <p class="line2">$50/month gets you 10 users, and you can add more $10 pe user</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cards">
+                        <div class=" third bg-white p-4 text-center"> <img src="{% static 'images/doc2.jpg' %}"width="100%" />
+                            <p><h5>Special Docters</h5></p> 
+                            <p class="line3">We'll help you get started and be there when you have questions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="cards">
+                        <div class=" third bg-white p-4 text-center"> <img src="{% static 'images/doc2.jpg' %}"width="100%" />
+                            <p><h5>Special Docters</h5></p> 
+                            <p class="line3">We'll help you get started and be there when you have questions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

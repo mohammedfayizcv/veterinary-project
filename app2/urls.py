@@ -4,6 +4,7 @@ from django.urls.conf import include
 from . import views
 
 urlpatterns = [
-path('',views.funMaster,name='master'),
+path('',views.funMaster,name='admaster'),
 
 ]
+

@@ -6,7 +6,5 @@ from django.http import HttpResponse
 # Create your views here.
 def fun(request):
    return render(request,'index.html')
-# def fnMaster(request):
-#    return render(request,'master.html')
-def fnHome(request):
-   return render(request,'home.html')
+def fnabout(request):
+   return render(request,'about.html')

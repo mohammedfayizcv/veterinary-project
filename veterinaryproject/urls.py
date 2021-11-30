@@ -19,5 +19,5 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('',include('app1.urls')),
-    path('master',include('app2.urls'))
+    path('admaster',include('app2.urls'))
 ]

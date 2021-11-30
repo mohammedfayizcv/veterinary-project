@@ -1,751 +1,392 @@
+{% extends 'master.html' %}
+{% block content %}
 {% load static %}
 
 
-<!DOCTYPE html>
-<html lang="en">
+<section class="home" id="home">
+    <div class="row">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PETOS caret</title>
-    <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner ">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <img src="{% static 'images/6677.11.jpg' %}" class="d-block w-100" alt="..." id="img1">
+                    <div class="carousel-caption">
+                        <h2 class="display-1 " id="h21">
+                            <span>"</span> PETOS <span>"</span><span class="display-4 ">care</span>
+                        </h2>
+                        <div>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto laboriosam pariatur
+                                natus
+                                illum eum possimus accusantium voluptates dignissimos alias beatae.</p>
+                        </div>
+                        <div class="slider-btn">
+                            <!-- <button type="button" >Appoinment</button> -->
+                            <button type="button" class="btn btn-warning rounded-pill me-1 w-25" data-bs-toggle="modal"
+                                data-bs-target="#appoinmentmodal">
+                                Appoinment
+                            </button>
+
+                            <button type="button" class="btn btn-warning rounded-pill me-1"> <i
+                                    class="fas fa-phone"></i> Get call</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="{% static 'images/8527.11.jpg' %}" class="d-block w-100" alt="..." id="img1">
+                    <div class="carousel-caption">
+                        <h2 id="h2f">WE <span id="h2span">CARE YOUR PETS</span></h2>
+                        <div>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In corrupti nulla, vero qui
+                                labore dolorum ipsam itaque est voluptates.</p>
+                        </div>
+                        <div class="slider-btn">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400;1,700&family=Arimo:ital,wght@0,400;1,400;1,500;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap"
-        rel="stylesheet">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="{% static 'images/11027.jpg' %}" class="d-block w-100" alt="..." id="img1">
+                    <div class="carousel-caption">
+                        <h2 class="display-2 ">Trainning <span id="spa">...</span></h2>
+                        <div>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates voluptatum
+                                placeat
+                                ab aliquid unde modi expedita aut! Quisquam, eveniet odio.</p>
+                        </div>
+                        <div class="slider-btn">
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'images/style.css' %}"> bg image in django -->
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Ninth navbar example" id="navhd">
-        <div class="container-xl">
-            <a href="#" class="navbar-brand"><img src="{% static 'images/logo.png' %}" alt="logo" id="logo"
-                    width="140px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL"
-                aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                            <button type="button" id="butt" class="btn btn-warning rounded-pill me-1 w-25 fs-4"> <i
+                                    class="fas fa-phone">
+                                </i> Get call</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarsExample07XL">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto fs-6">
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" aria-current="page" href="#home" id="ab">Home</a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" href="#aboutus" id="ab">About Us</a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" href="#services" id="ab">Services</a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" href="#shop" id="ab">pet foods</a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" href="#blog" id="ab">Blog</a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="nav-link active" href="#page" id="ab">Page</a>
-                    </li>
-
-                </ul>
-                <form class="d-flex">
-                    <div class="button">
-
-                        <button type="button" class="btn btn-warning rounded-pill"> <i class="fas fa-phone"></i>+91
-                            9746351731</button>
-
-                        <button type="button" class="btn btn-outline-warning rounded-pill me-1" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" id="appo">
-                            Login / Signup
-                        </button>
-                    </div>
-                </form>
-
-            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </nav>
+    </div>
+
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="col-md-6 content">
+                <div class="box">
+                    <h3 id="abh3" class="text-warning"><i class="fas fa-hand-holding-medical"></i> 24x7 Alvailable
+                    </h3>
+                    <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
+                        perferendis
+                        deleniti
+                        officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.</p>
+                </div>
+                <div class="box">
+                    <h3 id="abh3" class="text-warning"><i class="fas fa-user-md"></i> All Pet Doctor</h3>
+                    <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
+                        perferendis
+                        deleniti
+                        officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.</p>
+                </div>
+                <div class="box">
+                    <h3 id="abh3" class="text-warning"><i class="fas fa-user-nurse"></i> Expirienced Nurses</h3>
+                    <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
+                        perferendis
+                        deleniti
+                        officiis consectetur.</p>
+                </div>
+                <div class="box">
+                    <h3 id="abh3" class="text-warning"><i class="fas fa-ambulance"></i> Emergency Ambulance</h3>
+                    <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
+                        perferendis
+                        deleniti officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block ">
+                <img src="{% static 'images/nurse.01.png' %}" alt="" width="390px" style="margin-left: 90px;">
+            </div>
+
+        </div>
+    </div>
 
 
+</section>
 
-
-    <section class="home" id="home">
+<section class="about us" id="aboutus">
+    <div class="container">
         <div class="row">
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner ">
-                    <div class="carousel-item active" data-bs-interval="6000">
-                        <img src="{% static 'images/6677.11.jpg' %}" class="d-block w-100" alt="..." id="img1">
-                        <div class="carousel-caption">
-                            <h2 class="display-1 " id="h21">
-                                <span>"</span> PETOS <span>"</span><span class="display-4 ">care</span>
-                            </h2>
-                            <div>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto laboriosam pariatur
-                                    natus
-                                    illum eum possimus accusantium voluptates dignissimos alias beatae.</p>
-                            </div>
-                            <div class="slider-btn">
-                                <!-- <button type="button" >Appoinment</button> -->
-                                <button type="button" class="btn btn-warning rounded-pill me-1 w-25"
-                                    data-bs-toggle="modal" data-bs-target="#appoinmentmodal">
-                                    Appoinment
-                                </button>
-
-                                <button type="button" class="btn btn-warning rounded-pill me-1"> <i
-                                        class="fas fa-phone"></i> Get call</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000">
-                        <img src="{% static 'images/8527.11.jpg' %}" class="d-block w-100" alt="..." id="img1">
-                        <div class="carousel-caption">
-                            <h2 id="h2f">WE <span id="h2span">CARE YOUR PETS</span></h2>
-                            <div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In corrupti nulla, vero qui
-                                    labore dolorum ipsam itaque est voluptates.</p>
-                            </div>
-                            <div class="slider-btn">
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="6000">
-                        <img src="{% static 'images/11027.jpg' %}" class="d-block w-100" alt="..." id="img1">
-                        <div class="carousel-caption">
-                            <h2 class="display-2 ">Trainning <span id="spa">...</span></h2>
-                            <div>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates voluptatum
-                                    placeat
-                                    ab aliquid unde modi expedita aut! Quisquam, eveniet odio.</p>
-                            </div>
-                            <div class="slider-btn">
-
-                                <button type="button" id="butt" class="btn btn-warning rounded-pill me-1 w-25 fs-4"> <i
-                                        class="fas fa-phone">
-                                    </i> Get call</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-md-6 content">
-                    <div class="box">
-                        <h3 id="abh3" class="text-warning"><i class="fas fa-hand-holding-medical"></i> 24x7 Alvailable
-                        </h3>
-                        <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
-                            perferendis
-                            deleniti
-                            officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.</p>
-                    </div>
-                    <div class="box">
-                        <h3 id="abh3" class="text-warning"><i class="fas fa-user-md"></i> All Pet Doctor</h3>
-                        <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
-                            perferendis
-                            deleniti
-                            officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.</p>
-                    </div>
-                    <div class="box">
-                        <h3 id="abh3" class="text-warning"><i class="fas fa-user-nurse"></i> Expirienced Nurses</h3>
-                        <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
-                            perferendis
-                            deleniti
-                            officiis consectetur.</p>
-                    </div>
-                    <div class="box">
-                        <h3 id="abh3" class="text-warning"><i class="fas fa-ambulance"></i> Emergency Ambulance</h3>
-                        <p id="ps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae dolore
-                            perferendis
-                            deleniti officiis consectetur iure aliquam architecto non quaerat, nemo id expedita quae.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 d-none d-md-block ">
-                    <img src="{% static 'images/nurse.01.png' %}" alt="" width="390px" style="margin-left: 90px;">
+            <center>
+                <h1 class="h1 text-warning">About <span class="text-black">Us</span></h1>
+            </center>
+            <div class="col-md-6">
+                <div class="image">
+                    <img src="{% static 'images/5559055.jpg' %}" alt="" width="100%">
                 </div>
 
             </div>
-        </div>
-
-
-    </section>
-
-    <section class="about us" id="aboutus">
-        <div class="container">
-            <div class="row">
+            <div class="col-md-6 content" id="conteab">
+                <div>
+                    <h2 class="h22">We are<span id="span2"> PETOS</span></h2>
+                </div>
+                <div>
+                    <p id="pab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nulla excepturi
+                        beatae similique quaerat. Doloremque saepe quasi sint quas ipsam velit culpa nobis impedit.
+                        Aut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, laudantium.</p>
+                </div>
                 <center>
-                    <h1 class="h1 text-warning">About <span class="text-black">Us</span></h1>
+                    <div class="d-inline-flex pr-5 mr-5 tex" id="social">
+                        <div id="icon"><a href=""><i class="fas fa-phone-volume"></i></a>
+                            <h5>Call to us</h5>
+                            <p id="p22"><a href="">+999908765</a></p>
+                            <p id="p22"><a href="">+999908765</a></p>
+                        </div>
+                        <div id="icon"><a href="#map"><i class="fas fa-map-marker-alt"></i></a>
+                            <h5>Our location</h5>
+                            <p id="p22">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.</p>
+                        </div>
+                        <div id="icon"><a href=""><i class="fas fa-envelope"></i></a>
+                            <h5>Mail</h5>
+                            <p id="p22"><a href="">fayizcv1@gmail.com</a></p>
+                        </div>
+                        <div id="icon"><a href="#"><i class="fas fa-users"></i></i></a>
+                            <h5>To join</h5>
+                            <p id="p22">Pet Community Center is dedicated to strengthening the human-animal bond
+                                through accessible veterinary care and support services.</p>
+                        </div>
+                    </div>
                 </center>
-                <div class="col-md-6">
-                    <div class="image">
-                        <img src="{% static 'images/5559055.jpg' %}" alt="" width="100%">
-                    </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+<section class="doctor">
+
+
+    <div class="row col-12" id="doc">
+        <div class="heado">
+            <h1 class="h1 text-warning">OUR spacial<span class="text-white"> DOCTORS</span></h1>
+
+        </div>
+
+
+        <div class="card">
+            <div class="image" id="img3">
+                <img src="{% static 'images/09.jpg' %}" alt="">
+            </div>
+            <div class="info">
+                <h3 id="h3">DR.jhon</h3>
+                <h4>Doctor of Veterinary Medicine</h4>
+                <span id="span4">Dr. Gill graduated ECFVG at Oklahoma State University College of Veterinary
+                    medicine Sciences.</span> <br> <br>
+                <button class="btn btn-success rounded-pill  mb-4">payment</button>
+                <div class="icons">
+                    <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
 
                 </div>
-                <div class="col-md-6 content" id="conteab">
+            </div>
+        </div>
+        <div class="card">
+            <div class="image" id="img3">
+                <img src="{% static 'images/05.jpg' %} " alt="">
+            </div>
+            <div class="info">
+                <h3 id="h3">DR.jhon</h3>
+                <h4>Doctor of Veterinary Medicine</h4>
+                <span id="span4">Dr. Stevens started working at the clinic in the summer of 2005. It was always her
+                    dream job as a kid.
+
+                </span> <br> <br>
+                <button class="btn btn-success rounded-pill mb-4">payment</button>
+
+                <div class="icons">
+                    <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image" id="img3">
+                <img src="{% static 'images/06.jpg' %}" alt="">
+            </div>
+            <div class="info">
+                <h3 id="h3">DR.jhon</h3>
+                <h4>Doctor of Veterinary Medicine</h4>
+                <span id="span4">Dr. Gill graduated ECFVG at Oklahoma State University College of Veterinary
+                    medicine Sciences.</span> <br> <br>
+                <button class="btn btn-success rounded-pill  mb-4">payment</button>
+
+                <div class="icons">
+                    <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
+                    <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-form col-lg-6">
+                <h3 class="text-center text-warning"> Share Your Feedbacks</h3>
+                <form action="">
                     <div>
-                        <h2 class="h22">We are<span id="span2"> PETOS</span></h2>
+                        <input type="text" class="form-control" placeholder="First-Name">
+                        <input type="text" class="form-control" placeholder="Last-Name">
                     </div>
                     <div>
-                        <p id="pab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nulla excepturi
-                            beatae similique quaerat. Doloremque saepe quasi sint quas ipsam velit culpa nobis impedit.
-                            Aut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, laudantium.</p>
+                        <input type="email" class="form-control" placeholder="E-mail">
+                        <input type="text" class="form-control" placeholder="phone">
                     </div>
-                    <center>
-                        <div class="d-inline-flex pr-5 mr-5 tex" id="social">
-                            <div id="icon"><a href=""><i class="fas fa-phone-volume"></i></a>
-                                <h5>Call to us</h5>
-                                <p id="p22"><a href="">+999908765</a></p>
-                                <p id="p22"><a href="">+999908765</a></p>
-                            </div>
-                            <div id="icon"><a href=""><i class="fas fa-map-marker-alt"></i></a>
-                                <h5>Our location</h5>
-                                <p id="p22">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.</p>
-                            </div>
-                            <div id="icon"><a href=""><i class="fas fa-envelope"></i></a>
-                                <h5>Mail</h5>
-                                <p id="p22"><a href="">fayizcv1@gmail.com</a></p>
-                            </div>
-                            <div id="icon"><a href="#"><i class="fas fa-users"></i></i></a>
-                                <h5>To join</h5>
-                                <p id="p22">Pet Community Center is dedicated to strengthening the human-animal bond
-                                    through accessible veterinary care and support services.</p>
-                            </div>
-                        </div>
-                    </center>
-                </div>
+                    <textarea rows="5" placeholder="text here.." class="form-control"></textarea>
+                    <button class="btm btn-warning rounded-pill w-25">Send</button>
+                </form>
             </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/faaaa.png' %} " alt="" width="100%">
+            </div>
+        </div>
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18933.628147357824!2d75.82465717019349!3d11.24378825707653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bbe50ea0b7d%3A0xc4e01eaa6234847e!2sHiLITE%20Business%20Park%2C%20Poovangal%2C%20Pantheeramkavu%2C%20Kerala%20673014!5e0!3m2!1sen!2sin!4v1636901768928!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" id="map"></iframe>
         </div>
 
 
-    </section>
-    <section class="doctor">
 
-
-        <div class="row col-12" id="doc">
-            <div class="heado">
-                <h1 class="h1 text-warning">OUR spacial<span class="text-white"> DOCTORS</span></h1>
-
-            </div>
-
-
-            <div class="card">
-                <div class="image" id="img3">
-                    <img src="{% static 'images/09.jpg' %}" alt="">
-                </div>
-                <div class="info">
-                    <h3 id="h3">DR.jhon</h3>
-                    <h4>Doctor of Veterinary Medicine</h4>
-                    <span id="span4">Dr. Gill graduated ECFVG at Oklahoma State University College of Veterinary
-                        medicine Sciences.</span> <br> <br>
-                    <button class="btn btn-success rounded-pill  mb-4">payment</button>
-                    <div class="icons">
-                        <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image" id="img3">
-                    <img src="{% static 'images/05.jpg' %} " alt="">
-                </div>
-                <div class="info">
-                    <h3 id="h3">DR.jhon</h3>
-                    <h4>Doctor of Veterinary Medicine</h4>
-                    <span id="span4">Dr. Stevens started working at the clinic in the summer of 2005. It was always her
-                        dream job as a kid.
-
-                    </span> <br> <br>
-                    <button class="btn btn-success rounded-pill mb-4">payment</button>
-
-                    <div class="icons">
-                        <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image" id="img3">
-                    <img src="{% static 'images/06.jpg' %}" alt="">
-                </div>
-                <div class="info">
-                    <h3 id="h3">DR.jhon</h3>
-                    <h4>Doctor of Veterinary Medicine</h4>
-                    <span id="span4">Dr. Gill graduated ECFVG at Oklahoma State University College of Veterinary
-                        medicine Sciences.</span> <br> <br>
-                    <button class="btn btn-success rounded-pill  mb-4">payment</button>
-
-                    <div class="icons">
-                        <a href=""><i class="fab fa-facebook" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
-                        <a href=""><i class="fab fa-twitter" style="font-size: 40px;"></i></a>
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </div>
-
-    </section>
-
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-form col-lg-6">
-                    <h3 class="text-center text-warning"> Share Your Feedbacks</h3>
-                    <form action="">
-                        <div>
-                            <input type="text" class="form-control" placeholder="First-Name">
-                            <input type="text" class="form-control" placeholder="Last-Name">
-                        </div>
-                        <div>
-                            <input type="email" class="form-control" placeholder="E-mail">
-                            <input type="text" class="form-control" placeholder="phone">
-                        </div>
-                        <textarea rows="5" placeholder="text here.." class="form-control"></textarea>
-                        <button class="btm btn-warning rounded-pill w-25">Send</button>
-                    </form>
-                </div>
-                <div class="col-lg-6">
-                    <img src="{% static 'images/faaaa.png' %} " alt="" width="100%">
-                </div>
-            </div>
-            <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18933.628147357824!2d75.82465717019349!3d11.24378825707653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bbe50ea0b7d%3A0xc4e01eaa6234847e!2sHiLITE%20Business%20Park%2C%20Poovangal%2C%20Pantheeramkavu%2C%20Kerala%20673014!5e0!3m2!1sen!2sin!4v1636901768928!5m2!1sen!2sin"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-
-
-
-        </div>
-
-    </section>
-
-
-
-
-
-
-    <!-- //////f00ter///// -->
-    <div class="container-fluid ">
-
-        <footer class="text-white text-center text-lg-start" style="background-color: #23242a;">
-            <!-- Grid container -->
-            <div class="container p-4">
-                <!--Grid row-->
-                <div class="row mt-4">
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-4">About Petos</h5>
-
-                        <p>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti.
-                        </p>
-
-
-                        <div class="mt-4">
-                            <!-- Facebook -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg" href="#"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <!-- Dribbble -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg" href="#"><i
-                                    class="fab fa-instagram"></i></a>
-                            <!-- Twitter -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg" href="#"><i
-                                    class="fab fa-twitter"></i></a>
-                            <!-- Google + -->
-                            <a type="button" class="btn btn-floating btn-warning btn-lg" href="#"><i
-                                    class="fab fa-google-plus-g"></i></a>
-                            <!-- Linkedin -->
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <div class="form-outline form-white mb-4">
-
-                            <div class="form-notch">
-                                <div class="form-notch-leading" style="width: 9px;"></div>
-                                <div class="form-notch-middle" style="width: 48.8px;"></div>
-                                <div class="form-notch-trailing"></div>
-                            </div>
-                        </div>
-
-                        <ul class="fa-ul" style="margin-left: 1.65em;">
-                            <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY
-                                    10012, US</span>
-                            </li>
-                            <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-envelope"></i></span><span
-                                    class="ms-2">petos.com</span>
-                            </li>
-                            <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567
-                                    88</span>
-                            </li>
-                            <li class="mb-3">
-                                <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567
-                                    89</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-4">Opening hours</h5>
-
-                        <table class="table text-center text-white">
-                            <tbody class="font-weight-normal">
-                                <tr>
-                                    <td>Mon - Thu:</td>
-                                    <td>8am - 9pm</td>
-                                </tr>
-                                <tr>
-                                    <td>Fri - Sat:</td>
-                                    <td>8am - 1am</td>
-                                </tr>
-                                <tr>
-                                    <td>Sunday:</td>
-                                    <td>9am - 10pm</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
-                <a class="text-white" href="https:">petos.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
 
     </div>
 
+</section>
 
 
-    <!-- login from -->
+<!-- appoinment -->
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="appoinmentmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-5 shadow">
-                <div class="modal-header p-2 pb-2 border-bottom-0">
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        id="close"></button>
-                </div>
-
-                <div class="modal-body p-5 pt-0">
-                    <form class="form-signin text-center">
-                        <img class="mb-3" src="{% static 'images/logo.png' %}" alt="" width="100" height="100">
-                        <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
-                        <label for="inputEmail" class="sr-only">Email address</label>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required
-                            autofocus>
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" value="remember-me"> Remember me
-                            </label>
-                        </div>
-
-                        <button class="btn btn-lg btn-warning rounded-pill btn-block  w-50" type="submit">log
-                            in</button>
-                        <p class="mt-3">Not a member <button class="btn btn-primary rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#signUpmodal">signUp</button> </p>
-                        <p class="mt-3 mb-2 text-muted">&copy; 2018-2020</p>
-                        <!-- <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-4" id="floatingInput"
-                                placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control rounded-4" id="floatingPassword"
-                                placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">LOgin</button>
-                        <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-                        <hr class="my-4"> -->
-                        <!-- <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-                        <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="submit">
-                            <svg class="bi me-1" width="16" height="16">
-                                <use xlink:href="#twitter" />
-                            </svg>
-                            Sign up with Twitter
-                        </button>
-                        <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-4" type="submit">
-                            <svg class="bi me-1" width="16" height="16">
-                                <use xlink:href="#facebook" />
-                            </svg>
-                            Sign up with Facebook
-                        </button>
-                        <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-4" type="submit">
-                            <svg class="bi me-1" width="16" height="16">
-                                <use xlink:href="#github" />
-                            </svg>
-                            Sign up with GitHub
-                        </button> -->
-                    </form>
-                </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <h2 class="fw-bold mb-0 text-center">Appoinment From</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-
-    </div>
-    <!-- end loging from -->
-
-    <!-- appoinment -->
-
-
-    <div class="modal fade" id="appoinmentmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-5 shadow">
-                <div class="modal-header p-5 pb-4 border-bottom-0">
-                    <!-- <h5 class="modal-title">Modal title</h5> -->
-                    <h2 class="fw-bold mb-0 text-center">Appoinment From</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <p class="text-center">"Urgent pet care is conveniently located to provide your pet!"</p>
-                <div class="modal-body p-5 pt-0">
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="usernames" placeholder="Frist name">
-                            <h5 id="usercheck" style="color: red;">
-                                **Fristname is missing
-                            </h5>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="lastname" placeholder="Last name">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="tel" class="form-control" name="phone" id="phonenumber"
-                                placeholder="Phonenumber">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control" id="email" placeholder="em@il">
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" id="password" placeholder="password">
-                            <h6 id="passcheck" style="color: red;">
-                                **Please Fill the password
-                            </h6>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control" id="conpassword" placeholder="confirmPassword">
-                            <h6 id="conpasscheck" style="color: red;">
-                                **Password didn't match
-                            </h6>
-                        </div>
-                        <div class="col-12">
-                            <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="col-6">
-                            <label for="inputpet" class="form-label">Appoinment Date</label>
-                            <input type="date" class="form-control" placeholder="Appoinmentdate"
-                                name="Appointment request" required>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="inputCity" class="form-label">Time</label>
-                            <input type="time" class="form-control" id="time">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="inputpet" class="form-label">Select Your Pet</label>
-                            <select id="inputpet" class="form-select ">
-                                <option selected>Dog</option>
-                                <option>Cat</option>
-                                <option>Birds</option>
-                                <option>Others..</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="inputZip" placeholder="zipcode"
-                                style="margin-top: 22px;">
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="button" class="btn btn-warning rounded-pill " id="submitbtn">SUBMIT</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <!-- signup form -->
-
-
-    <div class="modal fade" id="signUpmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded-5 shadow">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                <form class="mx-1 mx-md-4">
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div class="form-floating flex-fill">
-                            <input type="text" id="floatingInput" class="form-control" placeholder="Your Name" />
-                            <label id="floatingInput">Your Name</label>
-                        </div>
+            <p class="text-center">"Urgent pet care is conveniently located to provide your pet!"</p>
+            <div class="modal-body p-5 pt-0">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="firstnames" placeholder="First name">
+                        <h5 id="firstcheck" style="color: red;">
+                            **Firstname is missing
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="lastnames" placeholder="Last name">
+                        <h5 id="lastcheck" style="color: red;">
+                            **lastname is missing
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="tel" class="form-control" name="phone" id="phonenumber" placeholder="Phone Number">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" id="email" placeholder="em@il">
+                        <small id="emailvalid" class="form-text
+                        text-muted invalid-feedback">
+                            Your email must be a valid email
+                        </small>
                     </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div class="form-floating flex-fill">
-                            <input type="email" id="floatingInput" class="form-control" placeholder="email.com"/>
-                            <label id="floatingInput">Your Email</label>
-                        </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" id="password" placeholder="password">
+                        <h6 id="passcheck" style="color: red;">
+                            **Please Fill the password
+                        </h6>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" class="form-control" id="conpassword" placeholder="confirmPassword">
+                        <h6 id="conpasscheck" style="color: red;">
+                            **Password didn't match
+                        </h6>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputpet" class="form-label">Appoinment Date</label>
+                        <input type="date" class="form-control" placeholder="Appoinmentdate" name="Appointment request"
+                            required>
                     </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div class="form-floating flex-fill mb-0">
-                            <input type="password" id="floatingInput" class="form-control" placeholder="password" />
-                            <label id="floatingInput">Password</label>
-                        </div>
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Time</label>
+                        <input type="time" class="form-control" id="time">
                     </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                        <div class="form-floating flex-fill mb-0">
-                            <input type="password" id="floatingInput" class="form-control" placeholder="Repeat password"/>
-                            <label id="floatingInput">Repeat your
-                                password</label>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="inputpet" class="form-label">Select Your Pet</label>
+                        <select id="inputpet" class="form-select ">
+                            <option selected>Dog</option>
+                            <option>Cat</option>
+                            <option>Birds</option>
+                            <option>Others..</option>
+                        </select>
                     </div>
 
-                    <div class="form-check d-flex justify-content-center mb-5">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                        <label class="form-check-label" for="form2Example3">
-                            I agree all statements in <a href="#!">Terms of service</a>
-                        </label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="inputZip" placeholder="zipcode"
+                            style="margin-top: 22px;">
                     </div>
-
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="button" class="btn btn-primary btn-lg">Register</button>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-warning rounded-pill " id="submitbtn">SUBMIT</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-    <!-- end signup -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/form.js' %}"></script>
-</body>
-
-</html>
+</div>
+{% endblock %}
