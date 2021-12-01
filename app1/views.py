@@ -8,3 +8,5 @@ def fun(request):
    return render(request,'index.html')
 def fnabout(request):
    return render(request,'about.html')
+def fnservices(request):
+   return render(request,'services.html')

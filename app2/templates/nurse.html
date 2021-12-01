@@ -1,0 +1,233 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h1>Doctors</h1>
+        </div>
+        <div class="nav col-lg-6 col-md-6 col-sm-6  d-flex justify-content-end p-lg-3 ">
+            <button type="button" class="btn btn-dark rounded-pill " data-bs-toggle="modal"
+                data-bs-target="#addnurses">
+                Add Nurses
+            </button>
+        </div>
+
+        <hr>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row  py-lg-5 text-center">
+        <div class="col-lg-3">
+
+            <img src="{% static 'images/nurse1.jpg' %}" class="bd-placeholder-img rounded-2 " width="200"
+                height="200" role="img" aria-label="Placeholder: 140x140" alt="">
+
+            <h2>Angelina</h2>
+            <p>DEPARTMENT :Clinical assistant</p>
+            <p>angelina@gmail.com</p>
+
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse2.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+            <h2>maxlin</h2>
+            <p> DEPARTMENT :Kennel assistant</p>
+            <p>maxlinab@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse3.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+
+            <h2>Peter</h2>
+            <p>DEPARTMENT :Jack (or rather Jill) of all trades whose duties were many but not well defined 
+            </p>
+            <p>peter@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse4.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+
+            <h2>Bunny</h2>
+            <p>DEPARTMENT :Kennel assistant
+            </p>
+            <p>bunny@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+    </div>
+    <div class="row  py-lg-1 text-center">
+        <div class="col-lg-3">
+
+            <img src="{% static 'images/nurse5.jpg' %}" class="bd-placeholder-img rounded-2 " width="200"
+                height="200" role="img" aria-label="Placeholder: 140x140" alt="">
+
+            <h2>Julie abraham</h2>
+            <p>DEPARTMENT :ocally employed people (usually women) with few relevant formal qualifications</p>
+            <p>julie@gmail.com</p>
+
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse6.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+            <h2>Robert</h2>
+            <p> DEPARTMENT :Administrator </p>
+            <p>robert@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse7.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+
+            <h2>Samantha</h2>
+            <p>DEPARTMENT :Kennel assistant
+            </p>
+            <p>samantha@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+        <div class="col-lg-3">
+            <img src="{% static 'images/nurse8.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
+                role="img" aria-label="Placeholder: 140x140" alt="">
+
+
+            <h2>Merry jhon</h2>
+            <p>DEPARTMENT :Clinic assistant
+            </p>
+            <p>ruby@gmail.com</p>
+            <p><a class="btn btn-secondary" href="#">Edit</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">phonenumber</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">file(photo)</th>
+                <th scope="col">D.o.B</th>
+                <th scope="col">Salary</th>
+                <th scope="col">change</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Dr.Dayana</td>
+                <td>098766544</td>
+                <td>dayana@gmail.com</td>
+                <td>Companion Animal Veterinarians</td>
+                <td>photo</td>
+                <td>12-2-1976</td>
+                <td>47000</td>
+                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Dr.Dayana</td>
+                <td>098766544</td>
+                <td>bond12@gmail.com</td>
+                <td>Exotic Companion Mammal Practice</td>
+                <td>photo</td>
+                <td>9-3-1992</td>
+                <td>47000</td>
+                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Dr.Ruby rose</td>
+                <td>788766544</td>
+                <td>ruby@gmail.com</td>
+                <td>Companion Animal Veterinarians</td>
+                <td>photo</td>
+                <td>6-8-1990</td>
+                <td>30000</td>
+                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <!-- end doctors  -->
+
+    <!-- modal in docter adding -->
+
+
+    <div class="modal fade" id="addnurses" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-5 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h2>Add Nurses/Staffs</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="firstnames" placeholder="First name">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" id="lastnames" placeholder="Last name">
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" name="phone" id="phonenumber"
+                                placeholder="Phone Number">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" id="email" placeholder="em@il">
+
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputState" class="form-label">Department</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Clinical assistant</option>
+                                <option>Administrator </option>
+                                <option>Kennel assistant </option>
+                                <option>Jack (or rather Jill) of all trades whose duties were many but not well defined </option>
+                                <option>ocally employed people (usually women) with few relevant formal qualifications</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">Add photo</label>
+                            <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputpet" class="form-label">Date of birth</label>
+                            <input type="date" class="form-control" placeholder="Appoinmentdate"
+                                name="Appointment request" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputpet" class="form-label">salary</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-dark rounded-pill " id="submitbtn">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

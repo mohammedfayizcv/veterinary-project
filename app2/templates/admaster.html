@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,27 +25,27 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/"
                         class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                        <img src="{% static 'images/logo.png' %} " alt="" class="bi me-2" width="90" height="90"
+                        <img src="{% static 'images/logo white.png' %} " alt="" class="bi me-2" width="90" height="90"
                             style="color: white;">
                     </a>
 
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <li>
 
-                            <a href="#" class="nav-link text-white">
-                                <i class="fas fa-home mx-auto mb-1" width="24" height="24"></i>
-                                Home
+                            <a href="adhome" class="nav-link text-white">
+                                <i class="fas fa-columns mx-auto mb-1" width="24" height="24"></i>
+                                Dashboard
                             </a>
                         </li>
                         <li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-expanded="false"> <span class="fas fa-columns mx-auto mb-1"></span>
-                                Dashboard</a>
+                            <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href=""
+                                role="button" aria-expanded="false"> <span class="fas fa-calendar-check mx-auto mb-1"></span>
+                                Appoinment</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="appoinment">Appoinment</a></li>
+                                <li><a class="dropdown-item" href="#">View Appoinments</a></li>
+                                <li><a class="dropdown-item" href="#">canceled appoinment</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -54,12 +54,17 @@
                         </li>
                         </li>
                         <li>
-                            <a href="#" class="nav-link text-white">
-                                <i class="fas fa-hospital-user mx-auto mb-1" width="24" height="24"></i>
+                            <a href="doctors" class="nav-link text-white">
+                                <i class="fas fa-user-md mx-auto mb-1" width="24" height="24"></i>
                                 Doctors
                             </a>
                         </li>
                         <li>
+                            <a href="nurse" class="nav-link text-white">
+                                <i class="fas fa-user-nurse mx-auto mb-1" width="24" height="24"></i>
+                                Nurse/Staff
+                            </a>
+                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -123,6 +128,34 @@
 
 
     <!-- start header  -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- start footer -->
+
+    <div class="container-fluid">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-1 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                </a>
+                <span class="text-muted fs-5">&copy; 2021 petos Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4  list-unstyled d-flex justify-content-end p-lg-3">
+                <li class="ms-3"><a class="text-muted fs-2" href="#"><i class="fab fa-instagram" width="24"
+                            height="24"></i></li>
+                <li class="ms-3"><a class="text-muted fs-2" href="#"><i class="fab fa-facebook" width="24"
+                            height="24"></i></a></li>
+                <li class="ms-3"><a class="text-muted fs-2" href="#"><i class="fab fa-twitter" width="30"
+                            height="30"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <!-- end footer -->
+
 
 
 
