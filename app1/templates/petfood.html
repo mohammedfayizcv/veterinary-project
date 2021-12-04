@@ -1,0 +1,151 @@
+{% extends 'master.html'%}
+{% block content %}
+{% load static %}
+
+<!-- css -->
+<style>
+    body {
+        background-color: #f6f7f9
+    }
+
+    .custom-badge {
+        background-color: #343a40 !important;
+        color: #fff;
+        font-size: 11px;
+        padding: 5px;
+        padding-left: 11px;
+        padding-right: 11px;
+        border-radius: 7px
+    }
+
+    .card {
+        border: none;
+        padding: 15px;
+        cursor: pointer
+    }
+
+    .time i {
+        color: #cacacaa3
+    }
+</style>
+
+<div class="container">
+    <div class="row bg-success">
+        <h3 class="fw-bold text-white">Pet Protein and foods All pets</h3>
+
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3"> <span>Food and Protein </span> <span>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Category
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Dog</a></li>
+                    <li><a class="dropdown-item" href="#">Cat</a></li>
+                    <li><a class="dropdown-item" href="#">Other</a></li>
+                </ul>
+            </div>
+        </span> </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood1.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Air Dried Beef</h3> <p>Dog</p> <span class="text-success">Leverage agile frameworks to provide a robust synopsis for high level overviews.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood2.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Air Dried Lamb</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood3.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Air Dried Salmon</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood4.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Dry Lamb Food</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood5.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Dry Salmon Food</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood6.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Venison</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood7.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Air Dried Beef</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood8.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Free Range Chicken</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood9.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Catfish</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood10.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Purept</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="text-center"> <img src="{% static 'images/petfood11.jpg' %}" width="250"> </div>
+                <div class="text-center">
+                    <h3>Whiskas</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
+                </div>
+            </div>
+        </div>
+   
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

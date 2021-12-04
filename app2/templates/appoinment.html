@@ -2,5 +2,294 @@
 {% block content %}
 {% load static %}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur nihil quia consectetur exercitationem a neque earum unde, praesentium modi, beatae quidem repudiandae tempora voluptatibus. Excepturi reprehenderit illum atque quasi?
+
+<!-- 
+<div class="container">
+    <div class="row py-lg-3">
+        <div class="col">
+            <h3>New Appoinment.</h3>
+            <button type="button" class="btn btn-success     rounded-pill me-1 w-25" data-bs-toggle="modal"
+            data-bs-target="#appoinmentmodal">
+            Appoinment
+        </button>
+        </div>
+
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <h1 class="mt-3">
+                <span class="fas fa-calendar-check "></span>    Appoinments.
+            </h1>
+            <hr>
+            <div class="col-lg-12">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Pet</th>
+                            <th scope="col">pet Name</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Confirm</th>
+    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>ijas</td>
+                            <td>cat</td>
+                            <td>Julie</td>
+                            <td>15-12-2021</td>
+                            <td>3:00pm</td>
+                            <td>Dr.Dayana</td>
+                            <td>
+                                <button type="button" class="btn btn-success  p-0">
+                                    <h6>Confirm</h6>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Shabee</td>
+                            <td>Dog</td>
+                            <td>Max</td>
+                            <td>16-12-2021</td>
+                            <td>8:00am</td>
+                            <td>Dr.Bond</td>
+                            <td>
+                                <button type="button" class="btn btn-success  p-0">
+                                    <h6>Confirm</h6>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Niyas</td>
+                            <td>cat</td>
+                            <td>Tom</td>
+                            <td>6-12-2021</td>
+                            <td>4:30pm</td>
+                            <td>Dr.Dayana</td>
+                            <td>
+                                <button type="button" class="btn btn-danger  p-0">
+                                    <h6>pending</h6>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Zendaya</td>
+                            <td>Dog</td>
+                            <td>Noon</td>
+                            <td>5-1-2022</td>
+                            <td>10:00am</td>
+                            <td>Dr.Ruby Rose</td>
+                            <td>
+                                <button type="button" class="btn btn-success  p-0">
+                                    <h6>Confirm</h6>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Ruby </td>
+                            <td>Dog</td>
+                            <td>Swizi</td>
+                            <td>17-1-2022</td>
+                            <td>9:00am</td>
+                            <td>Dr.Ruby Rose</td>
+                            <td>
+                                <button type="button" class="btn btn-danger  p-0">
+                                    <h6>pending</h6>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+    </div>
+   
+</div>
+
+<!-- appoinment modal -->
+<!-- 
+<div class="modal fade" id="appoinmentmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+
+                <h2 class="fw-bold mb-0 text-center">Appoinment From</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <p class="text-center">"Urgent pet care is conveniently located to provide your pet!"</p>
+            <div class="modal-body p-5 pt-0">
+                <h4>client/pet owner information</h4>
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltip01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid name.
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltip02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid name.
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltipUsername" class="form-label">phonenumber</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="validationTooltipUsername"
+                                aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                                Please choose a unique and valid phonenumber.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltipUsername" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                            <input type="email" class="form-control" id="validationTooltipUsername"
+                                aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                                Please choose a unique and valid email.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Address.
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltip05" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="validationTooltip05" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Appoinment date</label>
+                        <input type="date" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Appoinment Date.
+                        </div>
+                    </div>
+                    <div class="col-4 position-relative">
+                        <label for="validationTooltip03" class="form-label">Time</label>
+                        <input type="Time" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Time.
+                        </div>
+                    </div>
+                    <h4>Pet info</h4>
+                    <label for="validationTooltip04" class="form-label">Select your pet</label>
+                    <select class="form-select" id="validationTooltip04" required>
+                        <option selected disabled value="">Dog</option>
+                        <option>Cat</option>
+                        <option>Bird</option>
+                        <option>other</option>
+                    </select>
+                    <div class="invalid-tooltip">
+                        Please select a valid state.
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Petname</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid petname.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">pet breed</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid petbreed.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Appoinment date</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Appoinment Date.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Pet colour</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Pet colour.
+                        </div>
+                    </div>
+                    <div>
+                        <h6>Pet Sex</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Neutered Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                female
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                Spayed Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Pet Age /DOB</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Pet age.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">Pet Weight (kgs or ibs)</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid Pet Weight.
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>  -->
+
+<!-- end appoinment modal -->
+
+
 {% endblock %}

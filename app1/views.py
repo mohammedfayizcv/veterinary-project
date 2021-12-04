@@ -10,3 +10,7 @@ def fnabout(request):
    return render(request,'about.html')
 def fnservices(request):
    return render(request,'services.html')
+def fnpetfood(request):
+   return render(request,'petfood.html')
+def fnblog(request):
+   return render(request,'blog.html')

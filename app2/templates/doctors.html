@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row py-lg-3">
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1>Doctors</h1>
+            <h1><i class="fas fa-user-md "></i> Doctors</h1>
         </div>
         <div class="nav col-lg-6 col-md-6 col-sm-6  d-flex justify-content-end p-lg-3 ">
             <button type="button" class="btn btn-dark rounded-pill " data-bs-toggle="modal"
@@ -23,99 +23,161 @@
 
 <div class="container">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row  py-lg-5 text-center">
-        <div class="col-lg-4">
-
-            <img src="{% static 'images/doctor001.jpg' %}" class="bd-placeholder-img rounded-2 " width="200"
-                height="200" role="img" aria-label="Placeholder: 140x140" alt="">
-
-            <h2>Dr.Dayana</h2>
-            <p>DEPARTMENT :Companion Animal Veterinarians</p>
-            <p>dayana@gmail.com</p>
-
-            <p><a class="btn btn-secondary" href="#">Edit</a></p>
-        </div>
-        <div class="col-lg-4">
-            <img src="{% static 'images/doctor02.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
-                role="img" aria-label="Placeholder: 140x140" alt="">
-
-            <h2>Dr.Bond</h2>
-            <p> DEPARTMENT :Exotic Companion Mammal Practice</p>
-            <p>bond12@gmail.com</p>
-            <p><a class="btn btn-secondary" href="#">Edit</a></p>
-        </div>
-        <div class="col-lg-4">
-            <img src="{% static 'images/doctor03.jpg' %}" class="bd-placeholder-img rounded-2 " width="200" height="200"
-                role="img" aria-label="Placeholder: 140x140" alt="">
-
-
-            <h2>Dr.Ruby Rose</h2>
-            <p>DEPARTMENT :Companion Animal Veterinarians
-            </p>
-            <p>ruby@gmail.com</p>
-            <p><a class="btn btn-secondary" href="#">Edit</a></p>
-        </div>
-    </div>
-
     <div class="row">
-        <table class="table">
+        <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
             <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First Name</th>
-                <th scope="col">phonenumber</th>
-                <th scope="col">Email</th>
-                <th scope="col">Department</th>
-                <th scope="col">file(photo)</th>
-                <th scope="col">D.o.B</th>
-                <th scope="col">Salary</th>
-                <th scope="col">change</th>
-                
-              </tr>
+                <tr>
+                    <th class="th-sm">Id
+                    </th>
+                    <th class="th-sm">Name
+                    </th>
+                    <th class="th-sm">Department
+                    </th>
+                    <th class="th-sm">phonenumber
+                    </th>
+                    <th class="th-sm">email
+                    </th>
+                    <th class="th-sm">Age
+                    </th>
+                    <th class="th-sm">Start date
+                    </th>
+                    <th class="th-sm">Salary
+                    </th>
+                    <th class="th-sm">Edit
+                    </th>
+                    <th class="th-sm">Remove
+                    </th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Dr.Dayana</td>
-                <td>098766544</td>
-                <td>dayana@gmail.com</td>
-                <td>Companion Animal Veterinarians</td>
-                <td>photo</td>
-                <td>12-2-1976</td>
-                <td>47000</td>
-                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Dr.Dayana</td>
-                <td>098766544</td>
-                <td>bond12@gmail.com</td>
-                <td>Exotic Companion Mammal Practice</td>
-                <td>photo</td>
-                <td>9-3-1992</td>
-                <td>47000</td>
-                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Dr.Ruby rose</td>
-                <td>788766544</td>
-                <td>ruby@gmail.com</td>
-                <td>Companion Animal Veterinarians</td>
-                <td>photo</td>
-                <td>6-8-1990</td>
-                <td>30000</td>
-                <td><p><a class="btn btn-secondary" href="#">Edit</a></p></td>
-              </tr>
-            </tbody>
-          </table>
+                <tr>
+                    <td>1</td>
+                    <td>Dr.Dayana</td>
+                    <td>Companion Animal Veterinarians</td>
+                    <td>98765432</td>
+                    <td>dayana@gmail.com</td>
+                    <td>40</td>
+                    <td>2011/04/25</td>
+                    <td>92000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary  p-0">
+                            <h6>Edit</h6>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger  p-0">
+                            <h6>Remove</h6>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Dr.Bond</td>
+                    <td>Exotic Companion Mammal Practice</td>
+                    <td>765645343</td>
+                    <td>maxlinab@gmail.com</td>
+                    <td>34</td>
+                    <td>2011/04/25</td>
+                    <td>74000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary  p-0">
+                            <h6>Edit</h6>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger  p-0">
+                            <h6>Remove</h6>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Dr.Ruby Rose</td>
+                    <td>Companion Animal Veterinarians</td>
+                    <td>3456577666</td>
+                    <td>ruby@gmail.com</td>
+                    <td>23</td>
+                    <td>2011/04/25</td>
+                    <td>63000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary  p-0">
+                            <h6>Edit</h6>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger  p-0">
+                            <h6>Remove</h6>
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
-    <!-- end doctors  -->
+    <br>
+
+    <!-- time schedule -->
+
+
+    <form class="row g-3">
+
+        <div class="head">
+            <h2>
+              <i class="fas fa-clock"></i>  Time schedule by Doctors
+            </h2>
+            <hr>
+        </div>
+       
+        <div class="col-md-4">
+            <label for="id" class="form-label">Dr. Id</label>
+            <input type="number" class="form-control" id="id">
+          </div>
+        <div class="col-md-6">
+          <label for="text" class="form-label">Dr. Name</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputState" class="form-label">Doctors Department</label>
+            <select id="inputdepartment" class="form-select">
+                <option selected>Companion animal Veterinarians</option>
+                <option>Veterinary practitions</option>
+                <option>Exotic Companion Mammal Practice</option>
+                <option>food animal Veterinarians
+                </option>
+            </select>
+          </div>
+        <div class="col-md-2">
+          <label for="Text" class="form-label">Date / Time</label>
+          <input type="datetime-local" class="form-control" id="date">
+        </div>
+        <div class="col-md-2">
+            <label for="Text" class="form-label">Ending Time </label>
+            <input type="time" class="form-control" id="time">
+          </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+
+
+
+
+
+    <!-- End time schedule -->
+
+
+
+
+
 
     <!-- modal in docter adding -->
-
-
     <div class="modal fade" id="adddoctors" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
         <div class="modal-dialog" role="document">
@@ -127,6 +189,10 @@
 
                 <div class="modal-body p-5 pt-0">
                     <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="id" class="form-label">Dr. Id</label>
+                            <input type="number" class="form-control" id="id">
+                          </div>
                         <div class="col-12">
                             <input type="text" class="form-control" id="firstnames" placeholder="First name">
                         </div>
@@ -143,21 +209,25 @@
 
                         </div>
                         <div class="col-md-12">
-                            <label for="inputState" class="form-label">Department</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Companion Animal Veterinarians</option>
-                                <option>Veterinary Practitioners</option>
-                                <option>Exotic Companion Mammal Practice </option>
-                                <option>Reptile and Amphibian Practice </option>
-                                <option>Food Animal Veterinarians</option>
+                            <label for="inputdepartment" class="form-label">Department</label>
+                            <select id="inputdepartment" class="form-select">
+                                <option selected>Companion animal Veterinarians</option>
+                                <option>Veterinary practitions</option>
+                                <option>Exotic Companion Mammal Practice</option>
+                                <option>food animal Veterinarians
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="formFileMultiple" class="form-label">Add photo</label>
                             <input class="form-control" type="file" id="formFileMultiple" multiple>
                         </div>
+                        <div class="col-3">
+                            <label for="inputpet" class="form-label">Age</label>
+                            <input type="number" class="form-control">
+                        </div>
                         <div class="col-6">
-                            <label for="inputpet" class="form-label">Date of birth</label>
+                            <label for="inputpet" class="form-label">start date</label>
                             <input type="date" class="form-control" placeholder="Appoinmentdate"
                                 name="Appointment request" required>
                         </div>
@@ -175,8 +245,6 @@
         </div>
 
     </div>
-
-    <!-- modal in docter adding -->
 
 
 
