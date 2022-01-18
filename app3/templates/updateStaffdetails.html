@@ -1,0 +1,94 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+    <div class="  modal-content ">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+            <h2><i class="fas fa-user-edit"></i> UPDATE THIS DATA</h2>
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+
+            <form action="{% url 'saveUpdateStaffdetails' %}" method="POST">
+                {% csrf_token %}
+                <div class="col-12">
+                    <label for="" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="stafirstnames" placeholder="First name" name="firstname"
+                        value="{{stafo.name}}">
+                </div>
+                <div class="col-lg-12">
+                    <label for="" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="stalastnames" placeholder="Last name" name="lastname"
+                        value="{{stafo.lastname}}">
+
+                </div>
+                <div class="col-md-6">
+                    <label for="" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" name="phonenumber" id="staphonenumber"
+                        placeholder="Phone Number" value="{{stafo.phonenumber}}">
+                </div>
+                <div class="col-md-6">
+                    <label for="" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="staemail" placeholder="em@il" name="staemail"
+                        value="{{stafo.email}}">
+
+                </div>
+                <div class="col-md-6">
+                    <label for="" class="form-label">Password</label>
+                    <input type="text" class="form-control" name="password" id="stapassword" placeholder="password"
+                        name="password" value="{{stafo.password}}">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Select Staffcategory</label>
+                    <select id="category" class="form-select" name="category">
+                        {% for i in cate %}
+                        <option value="{{i.id}}">{{i.categoryname}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Department</label>
+                    <select id="department" class="form-select" name="department">
+                        {% for i in doc %}
+                        <option value="{{i.id}}">{{i.nameofdepartment}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="inputpet" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="staage" name="age" value="{{stafo.age}}">
+                </div>
+                <div class="col-6">
+                    <label for="inputpet" class="form-label">start date</label>
+                    <input type="date" class="form-control" placeholder="Appoinmentdate" id="stastartdate" name="date"
+                        value="{{stafo.startedDate}}">
+                </div>
+                <div class="col-6">
+                    <label for="inputpet" class="form-label">salary</label>
+                    <input type="text" class="form-control" id="stasalary" name="salary" value="{{stafo.salary}}">
+                </div>
+                <input type="text" placeholder="place" id="idup" hidden  value="{{stafo.id}}" name="stafftbid">
+        </div>
+        <center>
+        <div class="modal-footer ">
+            
+            <button class="btn btn-primary rounded-pill w-25 " type="submit">Save Update</button>
+        </div>
+    </center>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -7,80 +7,6 @@
         <div class="container px-4 py-5" id="custom-cards">
             <h2 class="pb-2 border-bottom">Dashboard overview</h2>
 
-            <!-- <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-                <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                        style="background-image: url('unsplash-photo-1.jpg');">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-lighter">Total Appoinments</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-appointment-telemedicine-justicon-lineal-color-justicon.png"
-                                        width="32" height="32" class="rounded-circle border border-white" />
-                                </li>
-                                <li class="d-flex align-items-center">
-
-                                    <h3>34</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                        style="background-image: url('unsplash-photo-1.jpg');">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-lighter">Vet patients</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img src="https://img.icons8.com/color/64/000000/veterinarian.png" width="32"
-                                        height="32" class="rounded-circle border border-white" />
-                                </li>
-                                <li class="d-flex align-items-center">
-
-                                    <h3>65</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                        style="background-image: url('unsplash-photo-1.jpg');">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-lighter">Total payment</h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img src="https://img.icons8.com/fluency/48/000000/total-sales-1.png" width="32"
-                                        height="32" class="rounded-circle border border-white" />
-                                </li>
-                                <li class="d-flex align-items-center">
-
-                                    <h3>450000</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                        style="background-image: url('unsplash-photo-1.jpg');">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-lighter"></h2>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <li class="me-auto">
-                                    <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-appointment-telemedicine-justicon-lineal-color-justicon.png"
-                                        width="32" height="32" class="rounded-circle border border-white" />
-                                </li>
-                                <li class="d-flex align-items-center">
-
-                                    <h3>34</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
-            <!-- </div> -->
             <div class="container my-5">
 
   
@@ -122,7 +48,7 @@
                         <div class="card-body py-3">
                           <i class="fas fa-chart-line"></i>
                           <p class="small">Total Appoinment</p>
-                          <h4>250</h4>
+                          <h4>{{appoinment}}</h4>
                         </div>
                         <div class="progress md-progress">
                           <div class="progress-bar bg grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -144,7 +70,7 @@
                         <div class="card-body py-3">
                           <i class="fas fa-chart-pie"></i>
                           <p class="small">Vet patients</p>
-                          <h4>200</h4>
+                          <h4>{{pet_patient}}</h4>
                         </div>
                         <div class="progress md-progress">
                           <div class="progress-bar grey darken-3" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -165,8 +91,8 @@
                       <div class="card classic-admin-card red accent-2">
                         <div class="card-body py-3">
                           <i class="fas fa-chart-bar"></i>
-                          <p class="small">Total user</p>
-                          <h4>200</h4>
+                          <p class="small">Total Service Booking</p>
+                          <h4>{{countservice}}</h4>
                         </div>
                         <div class="progress md-progress">
                           <div class="progress-bar grey darken-3" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -191,104 +117,104 @@
     </div>
 
     <div class="row">
-        <h1>
-            Today Appoinment.
+      <h3>
+        Today Appoinment.
 
-        </h1>
-        <div class="col-lg-12">
-            <table class="table align-middle">
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Pet</th>
-                        <th scope="col">pet Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Time</th>
-                        <th scope="col">Doctor</th>
-                        <th scope="col">Confirm</th>
+      </h3>
+      <div class="col-lg-12 table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Pet</th>
+              <th scope="col">pet Name</th>
+              <th scope="col">pet Disease</th>
+              <th scope="col">Date</th>
+              <th scope="col">Doctor</th>
+              <th scope="col">Time</th>
+              <th scope="col">Token Number</th>
+            
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ijas</td>
-                        <td>cat</td>
-                        <td>Julie</td>
-                        <td>15-12-2021</td>
-                        <td>3:00pm</td>
-                        <td>Dr.Dayana</td>
-                        <td>
-                            <button type="button" class="btn btn-success  p-0">
-                                <h6>Confirm</h6>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Shabee</td>
-                        <td>Dog</td>
-                        <td>Max</td>
-                        <td>16-12-2021</td>
-                        <td>8:00am</td>
-                        <td>Dr.Bond</td>
-                        <td>
-                            <button type="button" class="btn btn-success  p-0">
-                                <h6>Confirm</h6>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Niyas</td>
-                        <td>cat</td>
-                        <td>Tom</td>
-                        <td>6-12-2021</td>
-                        <td>4:30pm</td>
-                        <td>Dr.Dayana</td>
-                        <td>
-                            <button type="button" class="btn btn-danger  p-0">
-                                <h6>pending</h6>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Zendaya</td>
-                        <td>Dog</td>
-                        <td>Noon</td>
-                        <td>5-1-2022</td>
-                        <td>10:00am</td>
-                        <td>Dr.Ruby Rose</td>
-                        <td>
-                            <button type="button" class="btn btn-success  p-0">
-                                <h6>Confirm</h6>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Ruby </td>
-                        <td>Dog</td>
-                        <td>Swizi</td>
-                        <td>17-1-2022</td>
-                        <td>9:00am</td>
-                        <td>Dr.Ruby Rose</td>
-                        <td>
-                            <button type="button" class="btn btn-danger  p-0">
-                                <h6>pending</h6>
-                            </button>
-                        </td>
-                    </tr>
-                    
-                    
-                </tbody>
-            </table>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in today_app %}
 
-        </div>
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.pet}}</td>
+                <td>{{i.petbreed}}</td>
+                <td>{{i.petdisease}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.doctor.firstname}}</td>
+               <td>1:00</td>
+               <td>1</td>
+
+            
+            </tr>
+
+            {% endfor %}
+        </tbody>
+        </table>
+
+      </div>
 
     </div>
+    <br><br><br>
+
+    <!-- service bookin -->
+    <div class="row">
+      <h3>
+        Today Service Booking
+      </h3>
+      <div class="col-lg-12 table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Pet</th>
+              <th scope="col">pet Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Service</th>
+              <th scope="col">Ambulance Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in Bookservice %}
+
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phonenumber}}</td>
+                <td>{{i.pet}}</td>
+                <td>{{i.petbreed}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.services.ServiceName}}</td>
+                <td>{{i.ambulanceService}}</td>
+
+                
+
+            
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+
+
+    <!--end service booking -->
 
 
 

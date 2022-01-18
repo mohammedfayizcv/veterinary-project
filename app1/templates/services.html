@@ -15,53 +15,29 @@
     <h2 class="py-3 text-center ">We Care About Our Pets Since Their Birth</h2>
     <p class="text-center">We provide high-quality Pet care services and advice for a well-trained Pets</p>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for i in services %}
       <div class="col">
+
         <div class="card shadow-sm">
-          <img src="{% static 'images/boarding01.jpg' %}" alt="">
+          <img src="/app1/media/{{i.Image}}" alt="">
           <div class="card-body">
-            <h3 class="card-subtitle fw-bold">Pet Boarding</h3>
-            <p class="card-text">While you're on holiday, here's where your furry friends will spend their time..</p>
+            <h3 class="card-subtitle fw-bold">{{i.ServiceName}}</h3>
+            <p class="card-text">{{i.ServicesDetails}}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <a class="btn btn-warning rounded-pill me-1" href="tel:9746351731"><i class="fas fa-phone"></i>
                   Get call</a>
+                <button type="button" class="btn btn-primary bg-black rounded-pill" data-bs-toggle="modal"
+                  data-bs-target="#servicesappo" id="appo" style="color: #fff;">
+                  Book Service
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="{% static 'images/petcare02.jpg' %}" alt="">
 
-          <div class="card-body">
-            <h3 class="card-subtitle fw-bold">Dog Daycare</h3>
-            <p class="card-text">Our certified staff has over a decade experience working in pet care.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a class="btn btn-warning rounded-pill me-1" href="tel:9746351731"><i class="fas fa-phone"></i>
-                  Get call</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="{% static 'images/pettransfer01.jpg' %}" alt="">
-
-          <div class="card-body">
-            <h3 class="card-subtaitle fw-bold">Pet Transport</h3>
-            <p class="card-text">We welcome pet of all shapes and sizes that meet safety requirements.</p>
-            <div class="align-content-center">
-              <div class="btn-group ">
-                <a class="btn btn-warning rounded-pill me-1" href="tel:9746351731"><i class="fas fa-phone"></i>
-                  Get call</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -98,9 +74,9 @@
 
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-warning rounded-pill me-1 w-25 fw-bold" data-bs-toggle="modal"
-          data-bs-target="#appoinmentmodal">
-          Appoinment
+        <button type="button" class="btn btn-primary rounded-pill me-1 w-25 fw-bold" data-bs-toggle="modal"
+          data-bs-target="#servicesappo" id="appo" style="color: #fff;">
+          Book Service
         </button>
 
       </div>
@@ -117,7 +93,7 @@
     <div class="col-md-7 pt-5">
       <h2 class="featurette-heading  fw-bolder pt-4 text-center">Cat Boarding Rooms
       </h2>
-      <p class="lead">If you’re planning a vacation and would like a trusted professional to look after your pet, we
+      <p class="lead">If you're planning a vacation and would like a trusted professional to look after your pet, we
         provide a home away from home experience for a small number of pets.
       </p>
       <div class="text-center pt-3">
@@ -136,9 +112,9 @@
 
       </div>
       <div class="text-center pb-1">
-        <button type="button" class="btn btn-warning rounded-pill fw-bold me-1 w-25 " data-bs-toggle="modal"
-          data-bs-target="#appoinmentmodal">
-          Appoinment
+        <button type="button" class="btn btn-primary rounded-pill me-1 w-25 fw-bold" data-bs-toggle="modal"
+          data-bs-target="#servicesappo" id="appo" style="color: #fff;">
+          Book Service
         </button>
 
       </div>
@@ -153,6 +129,47 @@
 
 </div>
 
+<div class="container my-5 py-5 z-depth-1">
+
+
+  <!--Section: Content-->
+
+
+  <div class="row featurette">
+    <div class="col-lg-6">
+      <img src="{% static 'images/ambu2.jpg' %}" alt="" width="100%" style=" border-radius: 21px 21px 21px 21px;">
+    </div>
+    <div class="col-lg-6 pt-6 ">
+
+      <div class="pt-5">
+
+        <h3 class="fw-bold text-center pt-5 featurette-heading" style=" color: #17506c;">
+          Ambulance service
+        </h3>
+      </div>
+      <p class="pt-4 mx-5 fw-light lead">Likewise For Ambulance With full facility, Fixed maximum rate per trip upto 25
+        Km will be Rs. 1500, per Km rate after 25 Km will be Rs. 12 and waiting charge per hour after half an hour will
+        be Rs. 150 per hour.</p>
+      <h5>Only Emergency cases</h5>
+      <div class="text-center">
+        <div class="btn-group">
+          <a class="btn btn-warning  w-75 rounded-pill me-1" href="tel:9746351731"><i class="fas fa-phone"></i>
+            Get call</a>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!--Section: Content-->
+
+
+</div>
+
 
 
 <div class="container my-5 p-5 z-depth-1">
@@ -164,8 +181,9 @@
     <!-- Section heading -->
     <h2 class="text-center font-weight-bold mb-4 pb-2">Why is it so great?</h2>
     <!-- Section description -->
-    <p class="text-center lead grey-text mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    <p class="text-center lead grey-text mx-auto mb-5">
+      By definition, pet care is the care and medical treatment of pets which means any job that has to do with taking
+      care of pets would be considered a pet care profession.</p>
 
     <!-- Grid row -->
     <div class="row">
@@ -185,8 +203,10 @@
           <!-- Grid column -->
           <div class="col-10">
             <h5 class="font-weight-bold mb-3">Sugery</h5>
-            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores
-              nam, aperiam minima assumenda deleniti hic.</p>
+            <p class="grey-text">
+              All veterinarians may perform surgery as part of their veterinary practice. However, difficult cases may
+              be best managed by a specialist. Board-certified surgeons work closely with the owner and the primary
+              veterinarian before and after surgery in a team approach to ensure continuity of care for your animal.</p>
           </div>
           <!-- Grid column -->
 
@@ -205,8 +225,10 @@
           <!-- Grid column -->
           <div class="col-10">
             <h5 class="font-weight-bold mb-3">Daycare</h5>
-            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores
-              nam, aperiam minima assumenda deleniti hic.</p>
+            <p class="grey-text">
+              Based on her experience, "Day care is quite full on. There aren't many places in life that your dog would
+              need to tolerate that level of stimulation for such a long period of time and this can be quite
+              overwhelming for most dogs."</p>
           </div>
           <!-- Grid column -->
 
@@ -225,8 +247,9 @@
           <!-- Grid column -->
           <div class="col-10">
             <h5 class="font-weight-bold mb-3">Pet sitting</h5>
-            <p class="grey-text mb-md-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-              maiores nam, aperiam minima assumenda deleniti hic.</p>
+            <p class="grey-text mb-md-0">“the act of caring for a pet in its own home while the owner is away.” Dog
+              walking is also a form of pet sitting since it involves coming to the pet's home to provide exercise and
+              companionship. ... Pet sitters visit the pet home to provide a range of services.</p>
           </div>
           <!-- Grid column -->
 
@@ -238,8 +261,7 @@
 
       <!-- Grid column -->
       <div class="col-md-4 text-center">
-        <img class="img-fluid" src="{% static 'images/dogg1.jpg' %}"
-          alt="Sample image">
+        <img class="img-fluid" src="{% static 'images/dogg1.jpg' %}" alt="Sample image">
       </div>
       <!-- Grid column -->
 
@@ -258,8 +280,10 @@
           <!-- Grid column -->
           <div class="col-10">
             <h5 class="font-weight-bold mb-3">Beloved</h5>
-            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores
-              nam, aperiam minima assumenda deleniti hic.</p>
+            <p class="grey-text">
+              Your beloved is someone you love. You can also talk about a beloved pet or possession. You probably have
+              some things you really love: a bike, a skateboard, a book, a DVD, maybe a souvenir from a trip. Those are
+              beloved possessions — you really like them a lot.</p>
           </div>
           <!-- Grid column -->
 
@@ -271,15 +295,16 @@
 
           <!-- Grid column -->
           <div class="col-2">
-            <i class="fas fa-2x fa-bolt deep-purple-text"></i>
+            <i class="fas fa-2x fa-user-nurse deep-purple-text"></i>
           </div>
           <!-- Grid column -->
 
           <!-- Grid column -->
           <div class="col-10">
-            <h5 class="font-weight-bold mb-3">Rapid</h5>
-            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores
-              nam, aperiam minima assumenda deleniti hic.</p>
+            <h5 class="font-weight-bold mb-3">Expirienced Nurses</h5>
+            <p class="grey-text">Veterinary nursing is the supportive care of animals receiving treatment within a
+              veterinary practice. Veterinary nurses work alongside other veterinary nurses and veterinary surgeons as
+              part of the veterinary team, providing professional nursing care for sick and injured animals</p>
           </div>
           <!-- Grid column -->
 
@@ -291,15 +316,17 @@
 
           <!-- Grid column -->
           <div class="col-2">
-            <i class="fas fa-2x fa-magic deep-purple-text"></i>
+            <i class="fas fa-2x fa-user deep-purple-text"></i>
           </div>
           <!-- Grid column -->
 
           <!-- Grid column -->
           <div class="col-10">
-            <h5 class="font-weight-bold mb-3">Magical</h5>
-            <p class="grey-text mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
-              maiores nam, aperiam minima assumenda deleniti hic.</p>
+            <h5 class="font-weight-bold mb-3">training</h5>
+            <p class="grey-text mb-0">There are a few basic skills that make life with your dog more enjoyable and they
+              also make the dog's life with us more comfortable for the dog. ... You can do a ton of dog training
+              yourself. Dog training isn't rocket science. In fact, even if you sent your dog away to a trainer, you
+              still live with the dog.</p>
           </div>
           <!-- Grid column -->
 

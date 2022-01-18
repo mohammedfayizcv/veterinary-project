@@ -1,0 +1,50 @@
+{% extends 'master.html' %}
+{% block meta_discription %}Appoinment{% endblock %}
+{% block content %}
+{% load static %}
+
+
+<!-- start blog -->
+
+
+<section class="py-4 text-center container">
+    <div class="row py-lg-4">
+        <h1 class="fw-bold text-success">Appoinment Detailes</h1>
+        
+        <p> "Petos care your pets" </p>
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="row">
+        <center>
+            <h2>Review Your Information:</h2>
+            <strong>Your Name:</strong> {{appoin.name}} <br>
+            <strong>Address:</strong> {{appoin.address}} <br>
+            <strong>Email /Number</strong> {{appoin.email}} <br>
+            <strong>Appoinment Date:</strong> {{appoin.date}} <br>
+            <strong>Doctor:</strong> {{appoin.doctor.firstname}} <br>
+            <strong>Pet:</strong> {{appoin.pet}} <br>
+            <strong>Pet Breed:</strong> {{appoin.petbreed}} <br>
+            <strong>Pet Disease:</strong> {{appoin.petdisease}} <br>
+            <strong>Pet Sex:</strong> {{appoin.petsex}} <br>
+            <strong>Pet Age:</strong> {{appoin.petage}} <br>
+            <strong>Pet Weight:</strong> {{appoin.petweight}} <br>
+        </center>
+        <div class="note mt-6">
+            <strong>Note:</strong><p class="text-success">This Appoinment hasn't set yet, We will email you shortly via message to confirm your appoinment.</p>
+
+        </div>
+    </div>
+</div>
+   
+  
+
+
+
+
+
+
+
+{% endblock %}

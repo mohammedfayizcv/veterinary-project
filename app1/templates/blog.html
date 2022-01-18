@@ -4,14 +4,97 @@
 
 <!-- start blog -->
 
-<div class="container">
-    <div class="row">
-            
-    </div>
-</div>
 
-<!-- end blog -->
+<section class="py-4 text-center container">
+    <div class="row py-lg-4">
+        <h1 class="">our Blogs. </h1>
+        <p> "Petos care your pets" </p>
+    </div>
+</section>
+
+
+<!-- start copy blog -->
+
+<section class="standard-blog-area bg-light">
+    <div class="container">
+        <div class="row row-cols-2 pt-5">
+            <div class="col-lg-8 col-sm-12" style="padding-left: 15px;padding-right: 15px;">
+                <div class="standard-blog-item">
+                    {% for i in show %}
+                    <div class="standard-blog-thumb">
+                        <img src="/app1/media/{{i.photo}}" width="90%" style=" border-radius: 21px 21px 21px 21px;"
+                            alt="">
+                    </div>
+                    <div class="standard-blog-content">
+                        <div class="blog-post-meta ">
+                            <ul class="list-unstyled d-flex px-0 p-1">
+                                <li class="tags px-2 "><i class=""></i>
+                                    <p>{{i.petname}}</p>
+                                </li>
+                                <li class="px-2"><i class="far fa-user px-2"></i>{{i.name}}</li>
+                                <li class="px-2"><i class="far fa-bell px-2"></i> {{i.date}}</li>
+                            </ul>
+                        </div>
+                        <h2 class="title fw-bold "><a href="{% url 'services' %}"
+                                class="text-decoration-none text-black">{{i.heading}}</a></h2>
+  
+                        <a href="{% url 'readMore' readid=i.id %}" class="btn btn-primary rounded-pill">Read more</a>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-4 d-none d-md-block" style="padding-left: 15px;padding-right: 15px;">
+
+                <div class="widget" style="margin-left: 4rem;">
+                    <div class="sidebar-cat-list px-3 list-inline">
+                        <div class="card" style=" border-radius: 21px 21px 21px 21px;">
+
+                            <!-- Card image -->
+                            <div class="view overlay">
+                                <img class="card-img-top" src=" {% static 'images/bloimg2.jpg' %}" alt="Card image cap"
+                                    style=" border-radius: 21px 21px 0px 0px;">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                            <!-- Card content -->
+                            <div class="card-body">
+
+                                <!-- Title -->
+                                <h4 class="card-title">Dog Puppies</h4>
+                                <!-- Text -->
+                                <p class="card-text">Through these interactions with their mother and littermates,
+                                    puppies learn what being a dog is all about. During the first eight weeks of age,
+                                    skills not acquired may be lost forever. .</p>
+                                <!-- Button -->
+                                <a href="https://www.dailypaws.com/pet-news-entertainment/feel-good-stories"
+                                    target="_blank" class="btn btn-primary rounded-pill">Read more</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+
+
+<!-- end copy blog -->
+
 
 
 
 {% endblock %}
+
+
+

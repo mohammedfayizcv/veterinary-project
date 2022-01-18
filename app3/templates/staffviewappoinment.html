@@ -1,0 +1,70 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<!-- view appoinments list-->
+<div class="container">
+    <div class="row">
+        <div class="head mt-3">
+            <h1>
+                <span class="fas fa-list-alt "></span> View all Appoinments
+            </h1>
+            <hr>
+        </div>
+
+       <div class="col-12 table-responsive">
+        <table id="dtOrderExample" class="table-active" width="100%">
+            <thead>
+                <tr>
+                    <th scope="th-sm">Id</th>
+                    <th scope="th-sm">Name</th>
+                    <th scope="th-sm">Pet</th>
+                    <th scope="th-sm">pet Name</th>
+                    <th scope="th-sm">pet Diseases</th>
+                    <th scope="th-sm">Date</th>
+                    <th scope="th-sm">Time</th>
+                    <th scope="th-sm">Doctor</th>
+                    <th scope="th-sm">Confirm</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in appoinment %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.pet}}</td>
+                    <td>{{i.petbreed}}</td>
+                    <td>{{i.petdisease}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.doctor.firstname}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </td>
+                   
+                </tr>
+                {% endfor %}
+                
+
+            </tbody>
+
+        </table>
+
+       </div>
+      
+    </div>
+</div>
+
+<!-- end appoinments list-->
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+    <h2 class="fw-bold mb-0 text-center">Confirmation Token and Time</h2>
+
+
+<hr>
+<div class="modal-body p-5 pt-0">
+   
+
+    <form class="row g-3 needs-validation" id="tokenid" action="{% url 'savetoken' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="col-6 position-relative">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{Appoi.name}}">
+
+        </div>
+        <div class="col-6 position-relative">
+            <label for="name" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{Appoi.email}}">
+
+        </div>
+        <div class="col-6 position-relative">
+            <label for="name" class="form-label">date</label>
+            <input type="date" class="form-control" id="date" name="date" value="{{Appoi.date}}">
+
+        </div>
+          <div class="col-md-12">
+            <label for="doctor" class="form-label">Doctor</label>
+            <input type="text"value="{{doct.firstname}}" name=doctor>
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="text" class="form-label">Token Number</label>
+            <input type="text" class="form-control" id="token" name="token"required>
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="text" class="form-label">Time</label>
+            <select id="timeid" class="form-select" name="time">
+                {% for i in time %}
+                <option value="{{i.id}}">{{i.time}}</option>
+                {% endfor %}
+
+            </select>
+        </div>
+        <div class="col-12">
+            <center> <button class="btn btn-primary rounded-pill w-50 " type="submit" value="SUBMIT">Submit</button>
+            </center>
+        </div>
+    </form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

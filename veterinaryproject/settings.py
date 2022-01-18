@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
     'app2',
-   
+    'app3',
   
 ]
 
@@ -81,8 +81,14 @@ WSGI_APPLICATION = 'veterinaryproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'database_2',
+        'USER': 'postgres',
+        'PASSWORD':'1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -124,12 +130,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL='/images/'
+MEDIA_URL='/app1/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'app1/media')   
+
 STATICFILES_DIRS=[
-   os.path.join(BASE_DIR,"static")
+    os.path.join(BASE_DIR,'static')
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# email settings
+
+# pass :zlidpfrftpsaroxn
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'fayizcv1@gmail.com'
+EMAIL_HOST_PASSWORD = 'zlidpfrftpsaroxn'
+

@@ -15,9 +15,29 @@ body{
     height: 130px;
 }
 
+
 #ab {
     color: black;
+    transition: 0.3s all;
 }
+#ab:hover{
+    color: #ffc107;
+
+}
+.hover-link::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color:rgb(19, 18, 18);
+    transition: .3;
+}
+.hover-link:hover::after{
+    width: 100%;
+    transition: .3s;
+
+}
+
 .navbar-collapse {
     z-index: 2;
 }
@@ -26,30 +46,28 @@ body{
     width: 100%;
 }
 
- .carousel-item {
-        min-height: 30px;
-        background: no-repeat scroll center scroll;
-        -webkit-background-size: cover;
-        background-size: cover;
-
-
-    }
-    .carousel-caption{
-        position: absolute;
-    }
-    .carousel-item::before{
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(22, 22, 22, 0.329);
-        opacity: 0.3;
+.carousel-item {
+    min-height: 30px;
+    background: no-repeat scroll center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.carousel-caption{
+    position: absolute;
+}
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(22, 22, 22, 0.329);
+    opacity: 0.3;
     }
 .display-1{
-    font-size: 117px;
+    font-size: 70px;
     color: #324d7e;
     font-family: fantasy;
 
@@ -57,7 +75,7 @@ body{
 
 .display-4{
     font-family: none;
-    color: #d17932;
+    color: #fff;
 }
 #h2span{
     font-size: 52px;
@@ -70,7 +88,7 @@ body{
 }
 .display-2{
     font-family: fantasy;
-    color: #055160;
+    color: black;
     font-size: 80px;
 }
 
@@ -172,7 +190,7 @@ body{
     flex-wrap: wrap;   
 }
 .doctor #doc .card{
-    height: 36rem;
+    height: 30rem;
     width: 25rem;
     background: #fff;
     text-align: center;
@@ -297,6 +315,20 @@ body{
 #p22{
     font-size: 15px;
 }
+
+
+/* signup form */
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+
+
+
+
 
 
 

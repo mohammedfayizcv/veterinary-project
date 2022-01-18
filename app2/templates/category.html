@@ -1,0 +1,68 @@
+{% extends 'admaster.html'%}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+    <div class="row py-lg-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1><i class="fas fa-user-nurse mx-auto mb-1"></i>Staff Category</h1>
+        </div>
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2>Add staff categories</h2>
+               
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form class="row g-3" method="POST" action="{% url 'category' %}">
+                    {% csrf_token %}
+                    <div class="col">
+                        <label for="inputpet" class="form-label">Add staffCategory</label>
+                        <input type="text" class="form-control w-50 " id="category" name="category" >
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-dark rounded-pill  w-50 " type="submit" >Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <h3><i class="fas fa-table my-4"></i>Staff Category</h3>
+
+        <div class="row table-responsive">
+            <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Id
+                        </th>
+                        <th class="th-sm">category Name
+                        </th>
+                        <th class="th-sm">Remove
+                        </th>
+
+                    </tr>
+                </thead>
+                {% for i in category %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.categoryname}}</td>
+                    <td>
+                        <a href=""></a><button type="button" class="btn btn-danger ">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

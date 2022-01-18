@@ -1,0 +1,215 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Dashboard overview </h2>
+
+      <div class="container my-5">
+
+
+        <!-- Section: Block Content -->
+        <section>
+
+          <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">Staff</h6>
+          <h3 class="font-weight-bold text-center dark-grey-text pb-2">Statistic View</h3>
+          <hr class="w-header my-4">
+
+        </section>
+
+
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <h1>
+      Token Numbers
+
+    </h1>
+    <div class="col-lg-12 table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Token Number</th>
+            <th scope="col">name</th>
+            <th scope="col">Doctor</th>
+            <th scope="col">Time</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in token %}
+
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.token_id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.doctor}}</td>
+            <td>{{i.time.time}}</td>
+
+
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+  <br><br><br>
+
+  <div class="row">
+    <h1>
+      Today Appoinment.
+
+    </h1>
+    <div class="col-lg-12 table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">phonenumber</th>
+            <th scope="col">Pet</th>
+            <th scope="col">pet Name</th>
+            <th scope="col">pet Disease</th>
+            <th scope="col">Date</th>
+            <th scope="col">Doctor</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in appoinment %}
+
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.pet}}</td>
+            <td>{{i.petbreed}}</td>
+            <td>{{i.petdisease}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.doctor.firstname}}</td>
+
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+  <br><br><br>
+  <div class="row">
+    <h3>
+      Today Services Booked Table
+
+    </h3>
+    <div class="col-lg-12 table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Pet</th>
+            <th scope="col">pet Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Service</th>
+            <th scope="col">Ambulance Service</th>
+
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in servi_book %}
+
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phonenumber}}</td>
+            <td>{{i.pet}}</td>
+            <td>{{i.petbreed}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.services.ServiceName}}</td>
+            <td>{{i.ambulanceService}}</td>
+
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="row  py-lg-3">
+    <div class="col-lg-6 col-md-6 col-sm-6 table-responsive">
+      <h1><i class="fas fa-user-md "></i> Doctors</h1>
+    </div>
+
+    <div class="row table-responsive my-5">
+      <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th class="th-sm">Id
+            </th>
+            <th class="th-sm">Firstname
+            </th>
+            <th class="th-sm">Lastname
+            </th>
+            <th class="th-sm">Department
+            </th>
+            <th class="th-sm">phonenumber
+            </th>
+            <th class="th-sm">email
+            </th>
+            <th class="th-sm">Age
+            </th>
+            <th class="th-sm">Experience
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in doctor %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.firstname}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.department.nameofdepartment}}</td>
+            <td>{{i.phonenumber}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.experience}}</td>
+            {% endfor %}
+
+            </tfoot>
+      </table>
+    </div>
+    <br>
+  </div>
+
+</div>
+{% endblock %}

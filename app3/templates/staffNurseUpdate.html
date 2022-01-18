@@ -1,0 +1,87 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+    <div class="modal-content">
+
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+            <h2><i class="fas fa-user-edit"></i> Update Nurse Detail</h2>
+            
+        </div>
+        <hr>
+        <div class=" p-4 pb-1">
+            <h4><i class="fas fa-user"></i> {{edit.firstname}}</h4>
+        </div>
+            
+
+        <div class="modal-body p-5 pt-0">
+            <form class="row g-3" action="{% url 'saveUpdatedNurse' %}" method="POST">
+                {% csrf_token %}
+                <div class="col-12">
+                    <input type="text" class="form-control" id="nsfirstname" placeholder="First name" name="firstname"
+                        value="{{edit.firstname}}">
+                </div>
+                <div class="col-lg-12">
+                    <input type="text" class="form-control" id="nslastname" placeholder="Last name" name="lastname"
+                    value="{{edit.lasttname}}">
+
+                </div>
+                <div class="col-md-6">
+                    <input type="tel" class="form-control" name="phone" id="nsphonenumber" placeholder="Phone Number"
+                    value="{{edit.phonenumber}}">
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" id="nsemail" placeholder="em@il.com" name="email"  value="{{edit.mail}}">
+
+                </div>
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Department</label>
+                    <select id="inputState" class="form-select" name="department" required>
+                        {% for i in doc %}
+                        <option value="{{i.id}}">{{i.nameofdepartment}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Select Staffcategory</label>
+                    <select id="inputState" class="form-select" name="category" required>
+                        {% for i in cate %}
+                        <option value="{{i.id}}">{{i.categoryname}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="inputpet" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="nsage" name="age" value="{{edit.age}}">
+                </div>
+                <div class="col-6">
+                    <label for="inputpet" class="form-label">Experience</label>
+                    <input type="text" class="form-control" id="nsexperience" name="experience" value="{{edit.experience}}">
+                </div>
+                <div class="col-6">
+                    <label for="inputpet" class="form-label">start date</label>
+                    <input type="date" class="form-control" placeholder="Appoinmentdate" name="date" id="nsdate"
+                    value="{{edit.startdate}}" >
+                </div>
+                <div class="col-6">
+                    <label for="inputpet" class="form-label">salary</label>
+                    <input type="text" class="form-control" id="nssalary" name="salary" value="{{edit.salary}}">
+                </div>
+                <input type="text" placeholder="place" id="idup" hidden  value="{{edit.id}}" name="nurseTbid">
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark rounded-pill " id="submitbtn">Save Update</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'master.html'%}
+{% block content %}
+{% load static %}
+
+<center>
+<section class="standard-blog-area bg-light">
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 ">
+                <div class="standard-blog-item">
+                    <h2 class="title  text-center
+                        text-decoration-none text-black">{{readMore.heading}}</h2>
+                    <div class="standard-blog-thumb">
+                        <img src="/app1/media/{{readMore.photo}}" width="100%"
+                            style=" border-radius: 21px 21px 21px 21px;" alt="">
+                    </div>
+                    <div class="standard-blog-content">
+                        <div class="blog-post-meta ">
+                            <ul class="list-unstyled d-flex px-0 p-4">
+                                <li class="tags px-2 "><i class=""></i>
+                                    <p>{{readMore.petname}}</p>
+                                </li>
+                                <li class="px-2"><i class="far fa-user px-2"></i>{{readMore.name}}</li>
+                                <li class="px-2"><i class="far fa-bell px-2"></i> {{readMore.date}}</li>
+                            </ul>
+                        </div>
+                        <h2 class="title fw-bold
+                                text-decoration-none text-black">{{readMore.heading}}</h2>
+                        <p style="line-height: 25px;">{{readMore.textarea}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

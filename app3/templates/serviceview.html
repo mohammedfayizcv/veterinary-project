@@ -1,0 +1,73 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+<div class="container">
+    <div class="row mt-3">
+        <h2 class="mt-3">
+            <span class="fas fa-hospital-user"></span> Services Booking View
+
+        </h2>
+        <hr>
+    </div>
+    <div class="row">
+        <h3>
+        Services Booked Table
+  
+        </h3>
+        <div class="col-lg-12 table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col">Pet</th>
+                  <th scope="col">pet Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Ambulance Service</th>
+                  <th scope="col">Remove</th>
+
+
+                 
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in show_serv %}
+    
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.pet}}</td>
+                    <td>{{i.petbreed}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.services.ServiceName}}</td>
+                    <td>{{i.ambulanceService}}</td>
+                    <td>
+                        <a href="{% url 'remove_service_book' ReServ_id=i.id %}" class="btn btn-danger "><i
+                                class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+    
+          </div>
+  
+      </div>
+</div>
+
+
+
+
+{% endblock %}

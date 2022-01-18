@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </head>
 
@@ -21,9 +23,9 @@
     <!-- start header  -->
     <header>
         <div class="px-3 py-2 bg-dark text-white text-center">
-            <div class="container">
+            <div class="container ">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/"
+                    <a href="addashboard"
                         class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <img src="{% static 'images/logo white.png' %} " alt="" class="bi me-2" width="90" height="90"
                             style="color: white;">
@@ -31,36 +33,37 @@
 
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <li>
-
-                            <a href="addashboard" class="nav-link text-white">
+                            <a href="{% url 'addashboard' %}" class="nav-link text-white">
                                 <i class="fas fa-columns mx-auto mb-1" width="24" height="24"></i>
                                 Dashboard
                             </a>
                         </li>
-                        <li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href=""
-                                role="button" aria-expanded="false"> <span class="fas fa-calendar-check mx-auto mb-1"></span>
+                                role="button" aria-expanded="false"> <span
+                                    class="fas fa-calendar-check mx-auto mb-1"></span>
                                 Appoinment</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="appoinment">Appoinment</a></li>
-                                <li><a class="dropdown-item" href="viewappoinments">View Appoinments</a></li>
-                                <li><a class="dropdown-item" href="canceledappoinment">canceled appoinment</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                <li><a class="dropdown-item" href="{% url 'appoinment' %}"> <span
+                                            class="fas fa-calendar-check "></span> Appoinment</a></li>
+                                <li><a class="dropdown-item" href="{% url 'viewappoinments' %}"> <span
+                                            class="fas fa-list-alt "></span> View Appoinments</a></li>
+                                <li><a class="dropdown-item" href="{% url 'canceledappoinment' %}"> <i
+                                            class="far fa-window-close"></i> canceled appoinment</a></li>
+                                <li><a class="dropdown-item" href="{% url 'serviceBookingDetails' %}"> <i
+                                            class="fas fa-hospital-user"></i> 
+                                        Service Booking Details</a></li>
+
                             </ul>
                         </li>
-                        </li>
                         <li>
-                            <a href="doctors" class="nav-link text-white">
+                            <a href="{% url 'doctors' %}" class="nav-link text-white">
                                 <i class="fas fa-user-md mx-auto mb-1" width="24" height="24"></i>
                                 Doctors
                             </a>
                         </li>
                         <li>
-                            <a href="nurse" class="nav-link text-white">
+                            <a href="{% url 'nurse' %}" class="nav-link text-white">
                                 <i class="fas fa-user-nurse mx-auto mb-1" width="24" height="24"></i>
                                 Nurse/Staff
                             </a>
@@ -71,50 +74,43 @@
                                 role="button" aria-expanded="false"> <span class="fab fa-deezer mx-auto mb-1"></span>
                                 Department</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Doctors</a></li>
-                                <li><a class="dropdown-item" href="#">Staffs</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                <li><a class="dropdown-item" href="{% url 'nursedepartment' %}"> <i
+                                            class="fas fa-user-nurse"></i>Doctor ,Nurse and staff </a></li>
+                                <li><a class="dropdown-item" href="{% url 'addservice' %}"> <i
+                                            class="fas fa-grip-horizontal"></i>Services</a></li>
+                                <li><a class="dropdown-item" href="{% url 'category' %}"> <i
+                                            class="fas fa-folder-open"></i>Staff Category</a></li>
                             </ul>
                         </li>
 
-                        </li>
-                        <li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-expanded="false"> <span
-                                    class="fas fa-users-cog mx-auto mb-1"></span>Oersth</a>
+                                    class="fas fa-users-cog mx-auto mb-1"></span>others</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Payments</a></li>
-                                <li><a class="dropdown-item" href="#">Prescription</a></li>
-                                <li><a class="dropdown-item" href="#">Feedback Views</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Quries</a></li>
-                            </ul>
-                        </li>
+                                <li><a class="dropdown-item" href="{% url 'doct_time' %}"><i
+                                            class="fas fa-clock-four"></i> Doctor Time Scheduling</a></li>
+                                <li><a class="dropdown-item" href="{% url 'payment' %}"><i
+                                            class="fas fa-money-check-alt"></i> Payments</a></li>
+                                <li><a class="dropdown-item" href="{% url 'feedbackview' %}"><i
+                                            class="fas fa-comment-dots"></i> Feedback Views</a></li>
 
+
+                            </ul>
                         </li>
                     </ul>
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{% static 'images/06.jpg' %} " alt="mdo" width="32" height="32"
+                            <img src="{% static 'images/user.jpg' %} " alt="mdo" width="32" height="32"
                                 class="rounded-circle">
                         </a>
-                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <ul class="dropdown-menu text-small text-center " aria-labelledby="dropdownUser1">
+                            <li><i class="fas fa-user"></i> ADMIN</li>
+                            <hr class="dropdown-divider">
+                            <li><a class=" btn btn-outline-danger rounded-pill  " href="{% url 'adlogout' %}">Sign
+                                    out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -123,7 +119,6 @@
         </div>
 
     </header>
-
 
 
 
@@ -157,6 +152,16 @@
     <!-- end footer -->
 
 
+    <script>
+
+        msg = ('{% for message in messages %}{{ message }}{% endfor %}')
+        if (msg == '') {
+            console.log('nothing')
+        }
+        else {
+            alert(msg)
+        }
+    </script>
 
 
 

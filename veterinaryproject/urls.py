@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',include('app1.urls')),
-    path('/',include('app2.urls'))
+    path('admin/',include('app2.urls')),
+    path('staff/',include('app3.urls')),
 ]
+
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

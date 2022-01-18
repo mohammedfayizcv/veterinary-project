@@ -1,0 +1,130 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+<!-- doctors  -->
+
+<div class="container">
+    <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h1><i class="fas fa-user-md "></i> Services </h1>
+        </div>
+
+
+        <hr>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="modal-content rounded-5 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+            <h2>Add Services</h2>
+
+        </div>
+        <hr>
+
+        <div class="modal-body p-5 pt-0">
+            <form class="row g-3" method="POST" action="{% url 'addNewServices' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="col-12">
+                    <label for="text">Uplod Photo</label>
+                    <input type="file" class="form-control" id="image" name="image" onchange="readURL(this);" required>
+                    <img src="" alt="Selected Photo" id="photo" style="max-width: 180px;">
+                </div>
+                <div class="col-12">
+                    <input type="text" class="form-control" id="serviesname" placeholder="Servies Name" name="servicename"
+                        required>
+                </div>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="servicedetails" id="details" placeholder="Service Details"
+                        required>
+                </div>
+               
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark rounded-pill " id="submitbtn">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="row table-responsive">
+        <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-sm">No.
+                    </th>
+                    <th class="th-sm">image
+                    </th>
+                    <th class="th-sm">Service Name
+                    </th>
+                    <th class="th-sm">Service Details
+                    </th>
+
+                </tr>
+            </thead>
+            {% for i in show_serv %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.Image}}</td>
+                <td>{{i.ServiceName}}</td>
+                <td>{{i.ServicesDetails}}</td>
+                <!-- <td>
+                    <a href="{% url 'deleteDepart' dep=i.id %}" class="btn btn-danger"><i
+                            class="fas fa-trash-alt"></i></a>
+                </td> -->
+
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div>
+            {% for message in messages %}
+            <h6>{{ message }}</h6>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        msgg = ('{{mssgg}}')
+        if (msgg == '') {
+            console.log('heeyyyyyyyy')
+        } else {
+            alert(msgg)
+        }
+    </script>
+
+    <!-- input  image  -->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#photo')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

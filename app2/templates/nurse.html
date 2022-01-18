@@ -5,22 +5,30 @@
 <div class="container">
     <div class="row py-lg-3">
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1><i class="fas fa-user-nurse mx-auto mb-1"></i>Nurses</h1>
+            <h1><i class="fas fa-user-nurse mx-auto mb-1"></i>Nurse / staff</h1>
         </div>
         <div class="nav col-lg-6 col-md-6 col-sm-6  d-flex justify-content-end p-lg-3 ">
-            <button type="button" class="btn btn-dark rounded-pill " data-bs-toggle="modal" data-bs-target="#addnurses">
+            <button type="button" class="btn btn-dark rounded-pill px-6 " data-bs-toggle="modal"
+                data-bs-target="#addnurses">
                 Add Nurses
             </button>
+            <button type="button" class="btn btn-dark rounded-pill  " data-bs-toggle="modal" data-bs-target="#addstaff">
+                Add staff
+            </button>
         </div>
-
         <hr>
     </div>
 </div>
 
 
 <div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h1><i class="fas fa-user-nurse mx-auto mb-1"></i>Nurse</h1>
 
-    <div class="row">
+    </div>
+    <hr>
+
+    <div class="row table-responsive">
         <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
             <thead>
                 <tr>
@@ -44,179 +52,131 @@
                     </th>
                     <th class="th-sm">Remove
                     </th>
-                   
+
                 </tr>
             </thead>
             <tbody>
+                {% for i in nur %}
                 <tr>
-                    <td>1</td>
-                    <td>Angelina</td>
-                    <td>Clinical assistant</td>
-                    <td>98765432</td>
-                    <td>angelina@gmail.com</td>
-                    <td>25</td>
-                    <td>2011/04/25</td>
-                    <td>32000</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.department.nameofdepartment}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.mail}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.startdate}}</td>
+                    <td>{{i.salary}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
+                        <a href="{% url 'updateNurse' nurid=i.id %}" class="btn btn-primary">
+                            <i class="fas fa-user-edit"></i></a>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
+                        <a href="{% url 'deleteNurse' nurse=i.id %}" class="btn btn-danger"><i
+                                class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
+                {% endfor %}
+                </tfoot>
+        </table>
+
+
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h1><i class="fas fa-user mx-auto mb-1"></i> Staff</h1>
+        </div>
+        <hr>
+
+
+        <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+            <thead>
                 <tr>
-                    <td>2</td>
-                    <td>maxlin</td>
-                    <td>kannel assistant</td>
-                    <td>765645343</td>
-                    <td>maxlinab@gmail.com</td>
-                    <td>28</td>
-                    <td>2011/04/25</td>
-                    <td>34000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
+                    <th class="th-sm">Id
+                    </th>
+                    <th class="th-sm">Name
+                    </th>
+                    <th class="th-sm">Staff category
+                    </th>
+                    <th class="th-sm">Department
+                    </th>
+                    <th class="th-sm">phonenumber
+                    </th>
+                    <th class="th-sm">email
+                    </th>
+                    <th class="th-sm">password
+                    </th>
+                    <th class="th-sm">Age
+                    </th>
+                    <th class="th-sm">Start date
+                    </th>
+                    <th class="th-sm">Salary
+                    </th>
+                    <th class="th-sm">Edit
+                    </th>
+                    <th class="th-sm">Remove
+                    </th>
+
                 </tr>
+            </thead>
+            <tbody>
+                {% for i in staffview %}
                 <tr>
-                    <td>3</td>
-                    <td>Peter</td>
-                    <td>JAck(or rather jill)</td>
-                    <td>3456577666</td>
-                    <td>peter@gmail.com</td>
-                    <td>23</td>
-                    <td>2011/04/25</td>
-                    <td>23000</td>
+
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.staffcategory.categoryname}}</td>
+                    <td>{{i.department.nameofdepartment}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.startedDate}}</td>
+                    <td>{{i.salary}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
+                        <a href="{% url 'updateStaff' sid=i.id %}" class="btn btn-primary">
+                            <i class="fas fa-user-edit"></i></a>
+
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Bunny</td>
-                    <td>kannel assistant</td>
-                    <td>98765432</td>
-                    <td>bunny@gmail.com</td>
-                    <td>34</td>
-                    <td>2011/04/25</td>
-                    <td>30000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Julie abraham</td>
-                    <td>ocally employed people</td>
-                    <td>98765432</td>
-                    <td>julie@gmail.com</td>
-                    <td>35</td>
-                    <td>2011/04/25</td>
-                    <td>45000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td> <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
+                        <a href="{% url 'deletStaff' staff_id=i.id %}" class="btn btn-danger"><i
+                                class="fas fa-trash-alt"></i></a>
+
                     </td>
 
                 </tr>
-                <tr>
-                    
-                    <td>6</td>
-                    <td>Robert</td>
-                    <td>Administrator</td>
-                    <td>98765432</td>
-                    <td>Robert@gmail.com</td>
-                    <td>30</td>
-                    <td>2011/04/25</td>
-                    <td>35000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Samantha</td>
-                    <td>Kannel assistant</td>
-                    <td>98765432</td>
-                    <td>samantha@gmail.com</td>
-                    <td>23</td>
-                    <td>2011/04/25</td>
-                    <td>30000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Merry jhon</td>
-                    <td>Clinic assistant</td>
-                    <td>98765432</td>
-                    <td>merry@gmail.com</td>
-                    <td>27</td>
-                    <td>2011/04/25</td>
-                    <td>28000</td>
-                    <td>
-                        <button type="button" class="btn btn-primary  p-0">
-                            <h6>Edit</h6>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger  p-0">
-                            <h6>Remove</h6>
-                        </button>
-                    </td>
-                </tr>
-            </tfoot>
+
+                {% endfor %}
+            </tbody>
         </table>
+        <div>
+            {% for nusmesg in messages %}
+            <h5 class="text-danger">{{nusmesg}}</h5>
+            {% endfor %}
+        </div>
+
     </div>
+    <script>
+        msgg = ('{{mgs1}}')
+        if (msgg == '') {
+            console.log('heeyyyyyyyy')
+        } else {
+            alert(msgg)
+        }
+    </script>
+    <script>
+        msg = ('{{mgs}}')
+        if (msgg == '') {
+            console.log('heeyyyyyyyy')
+        } else {
+            alert(msgg)
+        }
+    </script>
+
 
 
     <!-- end doctors  -->
 
-    <!-- modal in docter adding -->
+    <!-- modal in nurse  adding -->
 
 
     <div class="modal fade" id="addnurses" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -224,63 +184,151 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content rounded-5 shadow">
                 <div class="modal-header p-5 pb-4 border-bottom-0">
-                    <h2>Add Nurses/Staffs</h2>
+                    <h2>Add Nurse</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body p-5 pt-0">
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <label for="id" class="form-label">Nurse Id</label>
-                            <input type="number" class="form-control" id="id">
-                          </div>
+                    <form class="row g-3" action="addnurse" method="POST">
+                        {% csrf_token %}
                         <div class="col-12">
-                            <input type="text" class="form-control" id="firstnames" placeholder="First name">
+                            <input type="text" class="form-control" id="nsfirstname" placeholder="First name"
+                                name="firstname" required>
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" class="form-control" id="lastnames" placeholder="Last name">
+                            <input type="text" class="form-control" id="nslastname" placeholder="Last name"
+                                name="lastname" required>
 
                         </div>
                         <div class="col-md-6">
-                            <input type="tel" class="form-control" name="phone" id="phonenumber"
-                                placeholder="Phone Number">
+                            <input type="tel" class="form-control" name="phone" id="nsphonenumber"
+                                placeholder="Phone Number" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" class="form-control" id="email" placeholder="em@il">
+                            <input type="email" class="form-control" id="nsemail" placeholder="em@il.com" name="email"
+                                required>
 
                         </div>
                         <div class="col-md-12">
                             <label for="inputState" class="form-label">Department</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Clinical assistant</option>
-                                <option>Administrator </option>
-                                <option>Kennel assistant </option>
-                                <option>Jack (or rather Jill) of all trades whose duties were many but not well defined
-                                </option>
-                                <option>ocally employed people (usually women) with few relevant formal qualifications
-                                </option>
+                            <select id="inputState" class="form-select" name="department" required>
+                                {% for i in doc %}
+                                <option value="{{i.id}}">{{i.nameofdepartment}}</option>
+                                {% endfor %}
+
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="formFileMultiple" class="form-label">Add photo</label>
-                            <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        <div class="col-md-12">
+                            <label for="inputState" class="form-label">Select Staffcategory</label>
+                            <select id="inputState" class="form-select" name="category" required>
+                                {% for i in cate %}
+                                <option value="{{i.id}}">{{i.categoryname}}</option>
+                                {% endfor %}
+
+                            </select>
                         </div>
                         <div class="col-3">
                             <label for="inputpet" class="form-label">Age</label>
-                            <input type="number" class="form-control">
+                            <input type="text" class="form-control" id="nsage" name="age" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputpet" class="form-label">Experience</label>
+                            <input type="text" class="form-control" id="nsexperience" name="experience" required>
                         </div>
                         <div class="col-6">
                             <label for="inputpet" class="form-label">start date</label>
-                            <input type="date" class="form-control" placeholder="Appoinmentdate"
-                                name="Appointment request" required>
+                            <input type="date" class="form-control" placeholder="Appoinmentdate" name="date" id="nsdate"
+                                required>
                         </div>
                         <div class="col-6">
                             <label for="inputpet" class="form-label">salary</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="nssalary" name="salary" required>
                         </div>
 
                         <div class="d-grid">
-                            <button type="button" class="btn btn-dark rounded-pill " id="submitbtn">Add</button>
+                            <button type="submit" class="btn btn-dark rounded-pill " id="submitbtn">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end nurse addind -->
+
+
+    <!-- add staff addind -->
+
+    <div class="modal fade" id="addstaff" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-5 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h2>Staffs</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <form class="row g-3" action="staff" method="POST">
+                        {% csrf_token %}
+
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="firstnames" placeholder="First name"
+                                name="firstname" required>
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" id="lastnames" placeholder="Last name"
+                                name="lastname" required>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" name="phonenumber" id="phonenumber"
+                                placeholder="Phone Number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" id="email" placeholder="em@il" name="email"
+                                required>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="password" id="password" placeholder="password"
+                                name="password" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputState" class="form-label">Select Staffcategory</label>
+                            <select id="staffcategory" class="form-select" name="category" required>
+                                {% for i in cate %}
+                                <option value="{{i.id}}">{{i.categoryname}}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputState" class="form-label">Department</label>
+                            <select id="staffdepartment" class="form-select" name="department" required>
+                                {% for i in doc %}
+                                <option value="{{i.id}}">{{i.nameofdepartment}}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="inputpet" class="form-label">Age</label>
+                            <input type="number" class="form-control" name="age" id="age" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputpet" class="form-label">start date</label>
+                            <input type="date" class="form-control" placeholder="Appoinmentdate" name="date"
+                                id="startdate" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="inputpet" class="form-label">salary</label>
+                            <input type="text" id="salary" class="form-control" name="salary" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-dark rounded-pill " id="submitbtn">Add</button>
+                            <!-- <button type="submit"  class="btn btn-dark rounded-pill " onclick="funInsert()">ADD</button> -->
                         </div>
                     </form>
                 </div>
@@ -289,7 +337,7 @@
 
     </div>
 
-    
+
 
 
     {% endblock %}

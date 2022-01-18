@@ -1,0 +1,32 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="row py-lg-3">
+        <div class="head">
+            <h1>
+                <i class="fas fa-comment-dots mx-auto mb-1"></i>
+                Feedback view
+            </h1>
+        </div>
+        <hr>
+        <section class="text-lg-left dark-grey-text">
+            {% for i in feedback %}
+            <div class="media-body  text-md-left ml-md-3 ml-0 my-3   ">
+                <h5>
+                    {{i.firstname}}
+                </h5>
+                <h6>
+                    {{i.email}}
+                </h6>
+                <p> {{i.message}}</p>
+
+            </div>
+
+            {% endfor %}
+        </section>
+    </div>
+
+</div>
+{% endblock %}

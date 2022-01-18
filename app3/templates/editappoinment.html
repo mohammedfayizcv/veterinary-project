@@ -1,0 +1,140 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+    <h2 class="fw-bold mb-0 text-center">Update Appoinment Details</h2>
+
+
+<hr>
+<div class="modal-body p-5 pt-0">
+    <h4>client/pet owner information</h4>
+
+    <form class="row g-3 needs-validation" id="appoinmentid" action="{% url 'editedAppopiSave' %}" method="POST">
+        {% csrf_token %}
+
+        <!-- <div class="col-md-12 position-relative">
+
+            <label for="validationTooltip01" class="form-label">You Have Petos Id</label>
+            <input type="number" class="form-control" id="petosid">
+        </div> -->
+        <div class="col-md-12 position-relative">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{Appoi.name}}">
+
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="email" class="form-label">email/phonnumber</label>
+            <input type="TEXT" class="form-control" id="email" name="email"value="{{Appoi.email}}">
+        </div>
+        <div class="col-md-12 position-relative">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address"value="{{Appoi.address}}">
+        </div>
+        <div class="col-lg-6 position-relative">
+            <label for="date" class="form-label">Appoinment date</label>
+            <input type="date" class="form-control" id="date" name="date"value="{{Appoi.date}}">
+
+        </div>
+        <div class="col-md-12">
+            <label for="doctor" class="form-label">Select Doctor</label>
+            <select id="doctor" class="form-select" name="doctor">
+                {% for i in Doctor %}
+                <option value="{{i.id}}">{{i.firstname}}</option>
+                {% endfor%}
+            </select>
+        </div>
+        <h4>Pet info</h4>
+        <label for="selectpet" class="form-label">Select your pet</label>
+        <select class="form-select" id="selectpet" name="pet">
+            <option selected value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Bird">Bird</option>
+            <option value="Other">other</option>
+        </select>
+        <div class="col-lg-6 position-relative">
+            <label for="petname" class="form-label">Petname</label>
+            <input type="text" class="form-control" id="petname" name="petname" value="{{Appoi.petname}}">
+        </div>
+        <div class="col-lg-6 position-relative">
+            <label for="petbreed" class="form-label">pet breed</label>
+            <input type="text" class="form-control" id="petbreed" name="petbreed" value="{{Appoi.petbreed}}">
+        </div>
+        <div class="col-lg-12 position-relative">
+            <label for="petissue" class="form-label">Pet Disease</label>
+            <input type="text" class="form-control" id="petissue" name="petdisease" value="{{Appoi.petdisease}}">
+        </div>
+        <div>
+            <h6>Pet Sex</h6>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="petsex" id="petsex1" value="Male" checked>
+                <label class="form-check-label" for="petsex">
+                    male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="petsex" id="petsex2" value=" NeuteredMale">
+                <label class="form-check-label" for="petsex">
+                    Neutered Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="petsex" id="petsex3" value="female">
+                <label class="form-check-label" for="petsex">
+                    female
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="petsex" id="petsex4" value="SpayedFemale">
+                <label class="form-check-label" for="petsex">
+                    Spayed Female
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-6 position-relative">
+            <label for="petage" class="form-label">Pet Age /DOB</label>
+            <input type="text" class="form-control" id="petage" name="petage"value="{{Appoi.petage}}">
+        </div>
+        <div class="col-lg-6 position-relative">
+            <label for="petweight" class="form-label">Pet Weight (kgs or ibs)</label>
+            <input type="text" class="form-control" id="petweight" name="petweight" value="{{Appoi.petweight}}">
+        </div>
+        <input type="text"  id="idup" hidden  value="{{Appoi.id}}" name="AppoTbid">
+        <div class="col-12">
+            <center> <button class="btn btn-secondary rounded-pill w-50 " type="submit" value="SUBMIT">Submit</button>
+            </center>
+        </div>
+    </form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

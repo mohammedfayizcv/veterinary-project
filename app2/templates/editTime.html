@@ -1,0 +1,68 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<!-- canceld appoinment list -->
+
+<div class="container">
+    <div class="row">
+        <div class="head mt-3">
+            <h3>
+                <i class="fas fa-clock-four"></i>
+                Edit Time Schedule
+            </h3>
+            <hr>
+        </div>
+
+        <div class="col">
+
+            <form action="{% url 'savetimeedit' %}" method="POST">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label for="text" class="form-label">Dr. Name</label>
+                    <select id="Edoctorid" class="form-select" name="doctorname">
+                        {% for i in Docto %}
+                        <option value="{{i.id}}">{{i.firstname}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Doctors Department</label>
+                    <select id="Edepartid" class="form-select" name="department"  value="{{time.time}}">
+                        {% for i in Depart %}
+                        <option value="{{i.id}}">{{i.nameofdepartment}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="Text" class="form-label">Time</label>
+                    <input type="text" class="form-control" id="Etime" name="starttime" value="{{time.time}}">
+                </div>
+                <input type="text" id="idtime" hidden  value="{{time.id}}" name="timeid">
+                <div class="col-12 py-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- end  cancelde appoinments -->
+
+
+
+
+
+{% endblock %}

@@ -52,98 +52,44 @@
                 </ul>
             </div>
         </span> </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood1.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Air Dried Beef</h3> <p>Dog</p> <span class="text-success">Leverage agile frameworks to provide a robust synopsis for high level overviews.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood2.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Air Dried Lamb</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood3.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Air Dried Salmon</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood4.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Dry Lamb Food</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood5.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Dry Salmon Food</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood6.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Venison</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood7.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Air Dried Beef</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood8.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Free Range Chicken</h3> <p>Dog</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood9.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Catfish</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood10.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Purept</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="text-center"> <img src="{% static 'images/petfood11.jpg' %}" width="250"> </div>
-                <div class="text-center">
-                    <h3>Whiskas</h3> <p>cat</p> <span class="text-success">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</span>
-                </div>
-            </div>
-        </div>
-   
         
+        <div class="container my-5">
+
+
+            <!--Section: Content-->
+            <section class="dark-grey-text text-center">
+    
+                <!-- Grid row -->
+                <div class="row">
+                    {% for i in foodshow %}
+                    <!-- Grid column -->
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="text-center"> <img src="/app1/media/{{i.photo}}" width="250"> </div>
+                        <div class="text-center">
+                            <h3>{{i.protiename}}</h3>
+                            <p>{{i.pet}}</p> <span class="text-success">{{i.protiendetails}}</span>
+                        </div>
+                        <!-- Card -->
+        
+                        <!-- Card -->
+                    </div>
+                    {% endfor %}
+        
+        
+        
+                </div>
+        
+        
+        </div>
     </div>
+</div>
+
+
+
+</section>
+<!--Section: Content-->
+
+
 </div>
 
 

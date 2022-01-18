@@ -1,0 +1,92 @@
+{% extends 'admaster.html'%}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+    <div class="row py-lg-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1><i class="fas fa-user-nurse mx-auto mb-1"></i>Doctor Department</h1>
+        </div>
+        <div class="nav col-lg-12 col-md-6 col-sm-6  d-flex justify-content-end p-lg-3 "><button type="button"
+                class="btn btn-primary rounded-pill px-6 " data-bs-toggle="modal" data-bs-target="#department">
+                Add department
+            </button></div>
+        <div class="row table-responsive">
+            <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Id
+                        </th>
+                        <th class="th-sm">Department Name
+                        </th>
+                        <th class="th-sm">Remove
+                        </th>
+
+                    </tr>
+                </thead>
+                {% for i in doc %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.nameofdepartment}}</td>
+                    <td>
+                        <a href="{% url 'deleteDepart' dep=i.id %}" class="btn btn-danger"><i
+                                class="fas fa-trash-alt"></i></a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </table>
+
+            <div>
+                {% for message in messages %}
+                <h6>{{ message }}</h6>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="department" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2>Add Department</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-5 pt-0">
+                <form class="row g-3" method="POST" action="{% url 'newdepart' %}">
+                    {% csrf_token %}
+                    <div class="col">
+                        <label for="inputpet" class="form-label">Add department</label>
+                        <input type="text" class="form-control" id="dp" name="department">
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-dark rounded-pill " type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

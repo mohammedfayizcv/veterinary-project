@@ -1,0 +1,68 @@
+{% extends 'admaster.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<!-- view appoinments list-->
+<div class="container">
+    <div class="row">
+        <div class="head mt-3">
+            <h1>
+                <span class="fas fa-hospital-user "></span> View all service Booking
+            </h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <h3>
+        Services Booked Table
+  
+        </h3>
+        <div class="col-lg-12 table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col">Pet</th>
+                  <th scope="col">pet Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Ambulance Service</th>
+
+
+                 
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in show_booking %}
+    
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.pet}}</td>
+                    <td>{{i.petbreed}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.services.ServiceName}}</td>
+                    <td>{{i.ambulanceService}}</td>
+                
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+    
+          </div>
+  
+      </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'staffmaster.html' %}
+{% block content %}
+{% load static %}
+  
+
+
+<div class="container">
+   
+    <div class="row  py-lg-3">
+        <div class="col-lg-6 col-md-6 col-sm-6 table-responsive">
+            <h1><i class="fas fa-user-md "></i> Doctors</h1>
+        </div>
+    
+        <div class="row table-responsive my-5">
+            <table id="dt-filter-select" class="table" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Id
+                        </th>
+                        <th class="th-sm">Firstname
+                        </th>
+                        <th class="th-sm">Lastname
+                        </th>
+                        <th class="th-sm">Department
+                        </th>
+                        <th class="th-sm">phonenumber
+                        </th>
+                        <th class="th-sm">email
+                        </th>
+                        <th class="th-sm">Age
+                        </th>
+                        <th class="th-sm">Experience
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in doctor %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.firstname}}</td>
+                        <td>{{i.lastname}}</td>
+                        <td>{{i.department.nameofdepartment}}</td>
+                        <td>{{i.phonenumber}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.age}}</td>
+                        <td>{{i.experience}}</td>
+                    {% endfor %}
+    
+                    </tfoot>
+            </table>
+        </div>
+        <br>
+    </div>
+    <br>
+
+    <!-- time schedule -->
+
+
+
+
+    <!-- End time schedule -->
+
+
+{% endblock %}
