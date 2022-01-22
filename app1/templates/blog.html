@@ -18,11 +18,11 @@
 <section class="standard-blog-area bg-light">
     <div class="container">
         <div class="row row-cols-2 pt-5">
-            <div class="col-lg-8 col-sm-12" style="padding-left: 15px;padding-right: 15px;">
+            <div class="col-lg-8 col-sm-12 " style="padding-left: 15px;padding-right: 15px;">
                 <div class="standard-blog-item">
                     {% for i in show %}
                     <div class="standard-blog-thumb">
-                        <img src="/app1/media/{{i.photo}}" width="90%" style=" border-radius: 21px 21px 21px 21px;"
+                        <img src="/app1/media/{{i.photo}}" width="100%" style=" border-radius: 21px 21px 21px 21px;"
                             alt="">
                     </div>
                     <div class="standard-blog-content">
@@ -44,15 +44,55 @@
                     {% endfor %}
                 </div>
             </div>
+           
+
             <div class="col-lg-4 d-none d-md-block" style="padding-left: 15px;padding-right: 15px;">
+                <div class="contact-form col-12">
+                    <h3 class="text-center text-warning"> Share Your Feedbacks</h3>
+                    <form action="{% url 'blog' %}" method="POST" id="feedback">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First-Name" name="firstname">
+                            <input type="text" class="form-control" placeholder="Last-Name" name="lastname">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="E-mail" name="email">
+                            <input type="text" class="form-control" placeholder="Phone number" name="phonenumber">
+                        </div>
+                        <textarea rows="3" placeholder="text here.." class="form-control" name="message"></textarea>
+                        <button class="btm btn-warning rounded-pill w-25" type="submit" value="submit">Send</button>
+                    </form>
+                </div>
 
                 <div class="widget" style="margin-left: 4rem;">
+                    <section class="text-center dark-grey-text">
+                        
+                        <!-- Grid row -->
+                        <div class="row">
+                    
+                          <!-- Grid column -->
+                          {% for i in feedback %}
+                          <div class="card" style=" border-radius: 21px 21px 21px 21px;">
+                            <p class="lead">"{{i.message}}"</p>
+                            <p class="text-muted">- {{i.firstname}}</p>
+                            <small>{{i.email}}</small>
+                            
+                          </div>
+                          {% endfor %}
+                          <!-- Grid column -->
+                    
+                        </div>
+                        <!-- Grid row -->
+                        
+                      </section>
+
                     <div class="sidebar-cat-list px-3 list-inline">
+                        {% for i in sideblog %}
                         <div class="card" style=" border-radius: 21px 21px 21px 21px;">
 
                             <!-- Card image -->
                             <div class="view overlay">
-                                <img class="card-img-top" src=" {% static 'images/bloimg2.jpg' %}" alt="Card image cap"
+                                <img class="card-img-top" src=" /app1/media/{{i.photo}}" alt="Card image cap"
                                     style=" border-radius: 21px 21px 0px 0px;">
                                 <a href="#!">
                                     <div class="mask rgba-white-slight"></div>
@@ -60,21 +100,22 @@
                             </div>
 
                             <!-- Card content -->
+                        
                             <div class="card-body">
 
                                 <!-- Title -->
-                                <h4 class="card-title">Dog Puppies</h4>
+                                <h4 class="card-title">{{i.heading}}</h4>
                                 <!-- Text -->
-                                <p class="card-text">Through these interactions with their mother and littermates,
-                                    puppies learn what being a dog is all about. During the first eight weeks of age,
-                                    skills not acquired may be lost forever. .</p>
+                                <p class="card-text">{{i.textarea}}</p>
                                 <!-- Button -->
                                 <a href="https://www.dailypaws.com/pet-news-entertainment/feel-good-stories"
                                     target="_blank" class="btn btn-primary rounded-pill">Read more</a>
 
                             </div>
+                   
 
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -92,9 +133,9 @@
 <!-- end copy blog -->
 
 
-
-
 {% endblock %}
 
-
-
+<div class="row">
+   
+   
+</div>

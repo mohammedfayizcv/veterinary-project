@@ -113,14 +113,15 @@ def funblogviews(request):
             obj.save()
     except Exception as e:
         print(e)
-    obj_pri = blogitems.objects.all()
+    obj_pri = blogitems.objects.filter(status=1)
     return render(request, 'blogviews.html', {'show': obj_pri,'editPro':obj_staff})
 
 
 # # sideblog
 def funsideblog(request):
-    try:
+    # try:
         if request.method == "POST":
+            print('hello123')
             file = request.FILES['image']
             heading = request.POST['heading']
             textarea = request.POST['textarea']
@@ -131,10 +132,11 @@ def funsideblog(request):
             obj_1 = sidebolg(photo=file_name, heading=heading,
                              textarea=textarea,status=1)
             obj_1.save()
-    except Exception as e:
-        print(e)
-    obj_show = sidebolg.objects.all()
-    return render(request, 'blogviews.html', {'sho': obj_show})
+            messages.info(request,"Uploaded Successfully")
+    # except Exception as e:
+    #     print(e)
+        obj_show = sidebolg.objects.all()
+        return redirect('blogviews', {'sho': obj_show})
 
 @staff_log
 def funeditprofile(request):

@@ -43,9 +43,10 @@ def fnpetfood(request):
 
 
 def fnblog(request):
-    obj_pri = blogitems.objects.all()
+    obj_pri = blogitems.objects.filter(status=1)
+    obj_side=sidebolg.objects.all()
     feed_view=feedbackTable.objects.all()
-    return render(request, 'blog.html', {'show': obj_pri,'feedback':feed_view})
+    return render(request, 'blog.html', {'show': obj_pri,'feedback':feed_view,'sideblog':obj_side})
 
 # read more blog area
 
@@ -77,6 +78,8 @@ def funAppoinment(request):
             petsex = request.POST['petsex']
             petage = request.POST['petage']
             petweight = request.POST['petweight']
+            
+            
             print(name, email, address, date, doctor, pet,
                   petname, petdisease, petsex, petage, petweight)
             obj_Dsave = appoinmenttable(name=name, email=email, address=address, date=date, doctor=doctor, pet=pet,
@@ -197,3 +200,4 @@ def funServiesAppoinment(request):
     except Exception as e:
         print(e)
     return render(request, 'index.html')
+
