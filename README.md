@@ -5,6 +5,9 @@ It's a fully dynamic website. this Deployed in Heroku so the media problem ,
 https://veterinarymng.herokuapp.com/
 
 Technologies Used:
+
+python
+Django
 Javasctipt
 JQuery
 AJAX
