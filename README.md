@@ -38,7 +38,7 @@ Admin:
 > admin can add a new services, hopital department
 > admin can view client feedbacks
 > admin can know the total booking and total pet services
-> 
+> Admin page login ( https://veterinarymng.herokuapp.com/login/ ) email: admin@demo.com pass: 1234
 
 
 Staff:
